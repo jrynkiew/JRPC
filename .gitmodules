@@ -10,3 +10,6 @@
 [submodule "external/FunctionalPlus"]
 	path = external/FunctionalPlus
 	url = https://github.com/Dobiasd/FunctionalPlus.git
+[submodule "external/doctest"]
+	path = external/doctest
+	url = https://github.com/doctest/doctest.git
