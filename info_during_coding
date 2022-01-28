@@ -1,0 +1,5 @@
+change this code , or add more to render 3d in background here:
+
+Impl_Frame_3D_ClearColor();
+
+this is part of abstract runner cpp in JRPC source code

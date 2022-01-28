@@ -1,0 +1,59 @@
+network:
+  externalHost: 89.70.227.146
+  externalPort: 4689
+  bootstrapNodes:
+    - /dns4/bootnode-0.testnet.iotex.one/tcp/4689/ipfs/12D3KooWFnaTYuLo8Mkbm3wzaWHtUuaxBRe24Uiopu15Wr5EhD3o
+    - /dns4/bootnode-1.testnet.iotex.one/tcp/4689/ipfs/12D3KooWS7hkdFozeUqriUxv7zw8Y6NCeV8E5HUbgmVkGJUv4jHS
+
+chain:
+  producerPrivKey: 0c3b5e186615db7da54bb545a387793532d6c6ae885c13d4d85a9a4c56512158
+  id: 2
+  evmNetworkID: 4690
+  chainDBPath: "/var/data/chain.db"
+  trieDBPath: "/var/data/trie.db"
+  trieDBPatchFile: "/var/data/trie.db.patch"
+  indexDBPath: "/var/data/index.db"
+  bloomfilterIndexDBPath: "/var/data/bloomfilter.index.db"
+  candidateIndexDBPath: "/var/data/candidate.index.db"
+  stakingIndexDBPath: "/var/data/staking.index.db"
+  maxCacheSize: 1000
+  committee:
+    gravityChainAPIs:
+      - https://mainnet.infura.io/v3/4a8f3db8e4b746349ef9af1bcf7d936d
+    numOfRetries: 20
+    paginationSize: 255
+    cacheSize: 1000
+  gravityChainDB:
+    dbPath: "/var/data/poll.db"
+    numRetries: 8
+
+actPool:
+  minGasPrice: "1000000000000"
+
+consensus:
+  scheme: ROLLDPOS
+  rollDPoS:
+    fsm:
+      unmatchedEventTTL: 3s
+      unmatchedEventInterval: 100ms
+      acceptBlockTTL: 4s
+      acceptProposalEndorsementTTL: 2s
+      acceptLockEndorsementTTL: 2s
+    delay: 10s
+    consensusDBPath: "/var/data/consensus.db"
+
+blockSync:
+  interval: 10s
+  bufferSize: 400
+  maxRepeat: 3
+  repeatDecayStep: 3
+
+log:
+  zap:
+    level: info
+    encoding: json
+    disableStacktrace: true
+    outputPaths: ["stderr", "stdout"]
+    errorOutputPaths: ["stderr"]
+  stderrRedirectFile: /var/log/s.log
+  stdLogRedirect: true

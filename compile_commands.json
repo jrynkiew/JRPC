@@ -1,0 +1,117 @@
+[
+{
+  "directory": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external",
+  "command": "/usr/bin/cc -DHELLOIMGUI_USE_GLAD -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/SYSTEM -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/OpenGL_Loaders/glad/include -O2 -g -DNDEBUG -o CMakeFiles/glad.dir/OpenGL_Loaders/glad/src/glad.c.o -c /home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/OpenGL_Loaders/glad/src/glad.c",
+  "file": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/OpenGL_Loaders/glad/src/glad.c"
+},
+{
+  "directory": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui",
+  "command": "/usr/bin/c++ -DHELLOIMGUI_HAS_OPENGL -DHELLOIMGUI_USE_GLAD -DHELLOIMGUI_USE_SDL_OPENGL3 -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/.. -I/home/jeremi/Coding/Apps/JRPC/external/imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/SYSTEM -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/OpenGL_Loaders/glad/include -isystem /usr/local/include/SDL2 -O2 -g -DNDEBUG -std=gnu++1z -o CMakeFiles/hello_imgui.dir/hello_imgui.cpp.o -c /home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/hello_imgui.cpp",
+  "file": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/hello_imgui.cpp"
+},
+{
+  "directory": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui",
+  "command": "/usr/bin/c++ -DHELLOIMGUI_HAS_OPENGL -DHELLOIMGUI_USE_GLAD -DHELLOIMGUI_USE_SDL_OPENGL3 -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/.. -I/home/jeremi/Coding/Apps/JRPC/external/imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/SYSTEM -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/OpenGL_Loaders/glad/include -isystem /usr/local/include/SDL2 -O2 -g -DNDEBUG -std=gnu++1z -o CMakeFiles/hello_imgui.dir/imgui_default_settings.cpp.o -c /home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/imgui_default_settings.cpp",
+  "file": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/imgui_default_settings.cpp"
+},
+{
+  "directory": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui",
+  "command": "/usr/bin/c++ -DHELLOIMGUI_HAS_OPENGL -DHELLOIMGUI_USE_GLAD -DHELLOIMGUI_USE_SDL_OPENGL3 -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/.. -I/home/jeremi/Coding/Apps/JRPC/external/imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/SYSTEM -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/OpenGL_Loaders/glad/include -isystem /usr/local/include/SDL2 -O2 -g -DNDEBUG -std=gnu++1z -o CMakeFiles/hello_imgui.dir/internal/backend_impls/abstract_runner.cpp.o -c /home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/backend_impls/abstract_runner.cpp",
+  "file": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/backend_impls/abstract_runner.cpp"
+},
+{
+  "directory": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui",
+  "command": "/usr/bin/c++ -DHELLOIMGUI_HAS_OPENGL -DHELLOIMGUI_USE_GLAD -DHELLOIMGUI_USE_SDL_OPENGL3 -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/.. -I/home/jeremi/Coding/Apps/JRPC/external/imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/SYSTEM -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/OpenGL_Loaders/glad/include -isystem /usr/local/include/SDL2 -O2 -g -DNDEBUG -std=gnu++1z -o CMakeFiles/hello_imgui.dir/internal/backend_impls/glslProgramObject.cpp.o -c /home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/backend_impls/glslProgramObject.cpp",
+  "file": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/backend_impls/glslProgramObject.cpp"
+},
+{
+  "directory": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui",
+  "command": "/usr/bin/c++ -DHELLOIMGUI_HAS_OPENGL -DHELLOIMGUI_USE_GLAD -DHELLOIMGUI_USE_SDL_OPENGL3 -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/.. -I/home/jeremi/Coding/Apps/JRPC/external/imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/SYSTEM -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/OpenGL_Loaders/glad/include -isystem /usr/local/include/SDL2 -O2 -g -DNDEBUG -std=gnu++1z -o CMakeFiles/hello_imgui.dir/internal/backend_impls/glslShaderObject.cpp.o -c /home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/backend_impls/glslShaderObject.cpp",
+  "file": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/backend_impls/glslShaderObject.cpp"
+},
+{
+  "directory": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui",
+  "command": "/usr/bin/c++ -DHELLOIMGUI_HAS_OPENGL -DHELLOIMGUI_USE_GLAD -DHELLOIMGUI_USE_SDL_OPENGL3 -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/.. -I/home/jeremi/Coding/Apps/JRPC/external/imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/SYSTEM -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/OpenGL_Loaders/glad/include -isystem /usr/local/include/SDL2 -O2 -g -DNDEBUG -std=gnu++1z -o CMakeFiles/hello_imgui.dir/internal/backend_impls/qJulia.cpp.o -c /home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/backend_impls/qJulia.cpp",
+  "file": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/backend_impls/qJulia.cpp"
+},
+{
+  "directory": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui",
+  "command": "/usr/bin/c++ -DHELLOIMGUI_HAS_OPENGL -DHELLOIMGUI_USE_GLAD -DHELLOIMGUI_USE_SDL_OPENGL3 -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/.. -I/home/jeremi/Coding/Apps/JRPC/external/imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/SYSTEM -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/OpenGL_Loaders/glad/include -isystem /usr/local/include/SDL2 -O2 -g -DNDEBUG -std=gnu++1z -o CMakeFiles/hello_imgui.dir/internal/backend_impls/runner_emscripten.cpp.o -c /home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/backend_impls/runner_emscripten.cpp",
+  "file": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/backend_impls/runner_emscripten.cpp"
+},
+{
+  "directory": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui",
+  "command": "/usr/bin/c++ -DHELLOIMGUI_HAS_OPENGL -DHELLOIMGUI_USE_GLAD -DHELLOIMGUI_USE_SDL_OPENGL3 -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/.. -I/home/jeremi/Coding/Apps/JRPC/external/imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/SYSTEM -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/OpenGL_Loaders/glad/include -isystem /usr/local/include/SDL2 -O2 -g -DNDEBUG -std=gnu++1z -o CMakeFiles/hello_imgui.dir/internal/backend_impls/runner_factory.cpp.o -c /home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/backend_impls/runner_factory.cpp",
+  "file": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/backend_impls/runner_factory.cpp"
+},
+{
+  "directory": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui",
+  "command": "/usr/bin/c++ -DHELLOIMGUI_HAS_OPENGL -DHELLOIMGUI_USE_GLAD -DHELLOIMGUI_USE_SDL_OPENGL3 -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/.. -I/home/jeremi/Coding/Apps/JRPC/external/imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/SYSTEM -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/OpenGL_Loaders/glad/include -isystem /usr/local/include/SDL2 -O2 -g -DNDEBUG -std=gnu++1z -o CMakeFiles/hello_imgui.dir/internal/backend_impls/runner_glfw_opengl3.cpp.o -c /home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/backend_impls/runner_glfw_opengl3.cpp",
+  "file": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/backend_impls/runner_glfw_opengl3.cpp"
+},
+{
+  "directory": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui",
+  "command": "/usr/bin/c++ -DHELLOIMGUI_HAS_OPENGL -DHELLOIMGUI_USE_GLAD -DHELLOIMGUI_USE_SDL_OPENGL3 -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/.. -I/home/jeremi/Coding/Apps/JRPC/external/imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/SYSTEM -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/OpenGL_Loaders/glad/include -isystem /usr/local/include/SDL2 -O2 -g -DNDEBUG -std=gnu++1z -o CMakeFiles/hello_imgui.dir/internal/backend_impls/runner_qt.cpp.o -c /home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/backend_impls/runner_qt.cpp",
+  "file": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/backend_impls/runner_qt.cpp"
+},
+{
+  "directory": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui",
+  "command": "/usr/bin/c++ -DHELLOIMGUI_HAS_OPENGL -DHELLOIMGUI_USE_GLAD -DHELLOIMGUI_USE_SDL_OPENGL3 -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/.. -I/home/jeremi/Coding/Apps/JRPC/external/imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/SYSTEM -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/OpenGL_Loaders/glad/include -isystem /usr/local/include/SDL2 -O2 -g -DNDEBUG -std=gnu++1z -o CMakeFiles/hello_imgui.dir/internal/backend_impls/runner_sdl_opengl3.cpp.o -c /home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/backend_impls/runner_sdl_opengl3.cpp",
+  "file": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/backend_impls/runner_sdl_opengl3.cpp"
+},
+{
+  "directory": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui",
+  "command": "/usr/bin/c++ -DHELLOIMGUI_HAS_OPENGL -DHELLOIMGUI_USE_GLAD -DHELLOIMGUI_USE_SDL_OPENGL3 -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/.. -I/home/jeremi/Coding/Apps/JRPC/external/imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/SYSTEM -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/OpenGL_Loaders/glad/include -isystem /usr/local/include/SDL2 -O2 -g -DNDEBUG -std=gnu++1z -o CMakeFiles/hello_imgui.dir/internal/docking_details.cpp.o -c /home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/docking_details.cpp",
+  "file": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/docking_details.cpp"
+},
+{
+  "directory": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui",
+  "command": "/usr/bin/c++ -DHELLOIMGUI_HAS_OPENGL -DHELLOIMGUI_USE_GLAD -DHELLOIMGUI_USE_SDL_OPENGL3 -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/.. -I/home/jeremi/Coding/Apps/JRPC/external/imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/SYSTEM -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/OpenGL_Loaders/glad/include -isystem /usr/local/include/SDL2 -O2 -g -DNDEBUG -std=gnu++1z -o CMakeFiles/hello_imgui.dir/internal/hello_imgui_assets.cpp.o -c /home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/hello_imgui_assets.cpp",
+  "file": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/hello_imgui_assets.cpp"
+},
+{
+  "directory": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui",
+  "command": "/usr/bin/c++ -DHELLOIMGUI_HAS_OPENGL -DHELLOIMGUI_USE_GLAD -DHELLOIMGUI_USE_SDL_OPENGL3 -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/.. -I/home/jeremi/Coding/Apps/JRPC/external/imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/SYSTEM -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/OpenGL_Loaders/glad/include -isystem /usr/local/include/SDL2 -O2 -g -DNDEBUG -std=gnu++1z -o CMakeFiles/hello_imgui.dir/internal/image_gl.cpp.o -c /home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/image_gl.cpp",
+  "file": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/image_gl.cpp"
+},
+{
+  "directory": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui",
+  "command": "/usr/bin/c++ -DHELLOIMGUI_HAS_OPENGL -DHELLOIMGUI_USE_GLAD -DHELLOIMGUI_USE_SDL_OPENGL3 -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/.. -I/home/jeremi/Coding/Apps/JRPC/external/imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/SYSTEM -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/OpenGL_Loaders/glad/include -isystem /usr/local/include/SDL2 -O2 -g -DNDEBUG -std=gnu++1z -o CMakeFiles/hello_imgui.dir/internal/imguial_term.cpp.o -c /home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/imguial_term.cpp",
+  "file": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/imguial_term.cpp"
+},
+{
+  "directory": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui",
+  "command": "/usr/bin/c++ -DHELLOIMGUI_HAS_OPENGL -DHELLOIMGUI_USE_GLAD -DHELLOIMGUI_USE_SDL_OPENGL3 -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/.. -I/home/jeremi/Coding/Apps/JRPC/external/imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/SYSTEM -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/OpenGL_Loaders/glad/include -isystem /usr/local/include/SDL2 -O2 -g -DNDEBUG -std=gnu++1z -o CMakeFiles/hello_imgui.dir/internal/main_screen_resolution.cpp.o -c /home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/main_screen_resolution.cpp",
+  "file": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/main_screen_resolution.cpp"
+},
+{
+  "directory": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui",
+  "command": "/usr/bin/c++ -DHELLOIMGUI_HAS_OPENGL -DHELLOIMGUI_USE_GLAD -DHELLOIMGUI_USE_SDL_OPENGL3 -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/.. -I/home/jeremi/Coding/Apps/JRPC/external/imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/SYSTEM -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/OpenGL_Loaders/glad/include -isystem /usr/local/include/SDL2 -O2 -g -DNDEBUG -std=gnu++1z -o CMakeFiles/hello_imgui.dir/internal/menu_statusbar.cpp.o -c /home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/menu_statusbar.cpp",
+  "file": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/menu_statusbar.cpp"
+},
+{
+  "directory": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui",
+  "command": "/usr/bin/cc -DHELLOIMGUI_HAS_OPENGL -DHELLOIMGUI_USE_GLAD -DHELLOIMGUI_USE_SDL_OPENGL3 -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/.. -I/home/jeremi/Coding/Apps/JRPC/external/imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/SYSTEM -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/OpenGL_Loaders/glad/include -isystem /usr/local/include/SDL2 -O2 -g -DNDEBUG -o CMakeFiles/hello_imgui.dir/internal/whereami/whereami.c.o -c /home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/whereami/whereami.c",
+  "file": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/whereami/whereami.c"
+},
+{
+  "directory": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui",
+  "command": "/usr/bin/c++ -DHELLOIMGUI_HAS_OPENGL -DHELLOIMGUI_USE_GLAD -DHELLOIMGUI_USE_SDL_OPENGL3 -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/.. -I/home/jeremi/Coding/Apps/JRPC/external/imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/SYSTEM -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/OpenGL_Loaders/glad/include -isystem /usr/local/include/SDL2 -O2 -g -DNDEBUG -std=gnu++1z -o CMakeFiles/hello_imgui.dir/internal/whereami/whereami_cpp.cpp.o -c /home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/whereami/whereami_cpp.cpp",
+  "file": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/internal/whereami/whereami_cpp.cpp"
+},
+{
+  "directory": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui",
+  "command": "/usr/bin/c++ -DHELLOIMGUI_HAS_OPENGL -DHELLOIMGUI_USE_GLAD -DHELLOIMGUI_USE_SDL_OPENGL3 -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/.. -I/home/jeremi/Coding/Apps/JRPC/external/imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/SYSTEM -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/OpenGL_Loaders/glad/include -isystem /usr/local/include/SDL2 -O2 -g -DNDEBUG -std=gnu++1z -o CMakeFiles/hello_imgui.dir/widgets/logger.cpp.o -c /home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/widgets/logger.cpp",
+  "file": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/widgets/logger.cpp"
+},
+{
+  "directory": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui",
+  "command": "/usr/bin/c++ -DHELLOIMGUI_HAS_OPENGL -DHELLOIMGUI_USE_GLAD -DHELLOIMGUI_USE_SDL_OPENGL3 -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/.. -I/home/jeremi/Coding/Apps/JRPC/external/imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/SYSTEM -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/OpenGL_Loaders/glad/include -isystem /usr/local/include/SDL2 -O2 -g -DNDEBUG -std=gnu++1z -o CMakeFiles/hello_imgui.dir/__/__/external/imgui/backends/imgui_impl_opengl3.cpp.o -c /home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/imgui/backends/imgui_impl_opengl3.cpp",
+  "file": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/imgui/backends/imgui_impl_opengl3.cpp"
+},
+{
+  "directory": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui",
+  "command": "/usr/bin/c++ -DHELLOIMGUI_HAS_OPENGL -DHELLOIMGUI_USE_GLAD -DHELLOIMGUI_USE_SDL_OPENGL3 -DIMGUI_IMPL_OPENGL_LOADER_GLAD -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/src/hello_imgui/.. -I/home/jeremi/Coding/Apps/JRPC/external/imgui -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/SYSTEM -I/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/OpenGL_Loaders/glad/include -isystem /usr/local/include/SDL2 -O2 -g -DNDEBUG -std=gnu++1z -o CMakeFiles/hello_imgui.dir/__/__/external/imgui/backends/imgui_impl_sdl.cpp.o -c /home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/imgui/backends/imgui_impl_sdl.cpp",
+  "file": "/home/jeremi/Coding/Apps/JRPC/external/hello_imgui/external/imgui/backends/imgui_impl_sdl.cpp"
+}
+]
