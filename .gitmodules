@@ -1,3 +1,6 @@
 [submodule "external/imGuIZMO.quat"]
 	path = external/imGuIZMO.quat
 	url = https://github.com/BrutPitt/imGuIZMO.quat.git
+[submodule "external/ImGuiColorTextEdit"]
+	path = external/ImGuiColorTextEdit
+	url = https://github.com/BalazsJako/ImGuiColorTextEdit.git
