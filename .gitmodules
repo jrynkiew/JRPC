@@ -1,0 +1,3 @@
+[submodule "external/imGuIZMO.quat"]
+	path = external/imGuIZMO.quat
+	url = https://github.com/BrutPitt/imGuIZMO.quat.git
