@@ -38,6 +38,7 @@ endif()
 # Build imGuIZMO.quat
 set (IMGUIQUAT_BUILD_IMGUIQUAT ON CACHE BOOL "" FORCE)
 set (imguiquat_dir ${CMAKE_CURRENT_LIST_DIR}/external/imGuIZMO.quat/imGuIZMO.quat)
+set (IMGUIZMO_IMGUI_FOLDER ../../imgui)
 add_library(imguiquat
 	${imguiquat_dir}/imGuIZMOquat.cpp
 	${imguiquat_dir}/imGuIZMOquat.h

@@ -7,3 +7,6 @@
 [submodule "imGuIZMO.quat"]
 	path = imGuIZMO.quat
 	url = https://github.com/BrutPitt/imGuIZMO.quat.git
+[submodule "external/FunctionalPlus"]
+	path = external/FunctionalPlus
+	url = https://github.com/Dobiasd/FunctionalPlus.git

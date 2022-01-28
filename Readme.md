@@ -4,4 +4,5 @@ Each node required to be run by a client to operate said gaming network platform
 
 Users active on one platform can redeem the same points on another gaming platform - at the same exchange rate as everyone else. 
 
-
+install:
+change JRPC/external/imGuIZMO.quat/imGuIZMO.quat/imGuIZMOquat.h line 20 from imgui/ to ../../imgui
