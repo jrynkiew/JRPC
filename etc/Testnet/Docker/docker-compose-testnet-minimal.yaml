@@ -1,0 +1,50 @@
+version: '2'
+
+services:
+  iotex:
+    container_name: iotex-core-testnet
+    image: iotex/iotex-core:latest
+    restart: on-failure
+    ports:
+      - 9080:8080
+      - 5690:4690
+      - 24014:14014
+    volumes:
+      - "$JRPC/data/Testnet/IoTeX:/var/data"
+      - "$JRPC/log/Testnet/IoTeX:/var/log"
+      - "$JRPC/etc/Testnet/IoTeX/config-override.yaml:/etc/iotex/config.yaml"
+      - "$JRPC/etc/Testnet/IoTeX/genesis-override.yaml:/etc/iotex/genesis.yaml"
+    command: iotex-server -config-path=/etc/iotex/config.yaml -genesis-path=/etc/iotex/genesis.yaml -plugin=gateway
+
+  #redis requires your host PC to set vm.overcommit_memory=1 in your host's etc/sysctl.conf file and then run `sudo sysctl --system`
+  redis:
+    container_name: redis-testnet
+    image: "redis:6.2.4-alpine3.14" 
+    restart: on-failure
+    command: --port 7379
+    ports:
+      - 7379:7379
+    volumes:
+      - "$JRPC/data/Testnet/redis:/data/"
+    #Uncomment this line to override redis configuration
+    #  - "$JRPC/etc/Testnet/redis/redis.conf:/etc/redis/redis.conf" 
+    
+  babel:
+    container_name: iotex-babel-api-testnet
+    image: jrpc1/iotex-babel-api:latest
+    #Uncomment this section and delete the `image:` section if you want to build the babel-api repository yourself instead pulling from docker hub
+    # build: 
+    #     context: ./external/iotex-babel-api
+    #     dockerfile: Dockerfile
+    depends_on:
+      - iotex
+      - redis
+    ports:
+      - 9545:9545
+    environment:
+      - PORT=9545
+      - CHAIN_ID=4690
+      - END_POINT=http://iotex:24014
+      - REDIS_HOST=redis
+      - REDIS_PORT=7379
+    command: npm start

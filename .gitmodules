@@ -13,3 +13,15 @@
 [submodule "external/imGuIZMO.quat"]
 	path = external/imGuIZMO.quat
 	url = https://github.com/jrynkiew/imGuIZMO.quat.git
+[submodule "external/iotex-analytics"]
+	path = external/iotex-analytics
+	url = https://github.com/iotexproject/iotex-analytics.git
+[submodule "external/iotex-election"]
+	path = external/iotex-election
+	url = https://github.com/iotexproject/iotex-election.git
+[submodule "external/pocket-core"]
+	path = external/pocket-core
+	url = https://github.com/jrynkiew/pocket-core.git
+[submodule "external/iotex-babel-api"]
+	path = external/iotex-babel-api
+	url = https://github.com/jrynkiew/iotex-babel-api

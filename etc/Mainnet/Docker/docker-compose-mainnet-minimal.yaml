@@ -1,0 +1,51 @@
+version: '2'
+
+services:
+  iotex:
+    container_name: iotex-core
+    image: iotex/iotex-core:v1.6.3
+    restart: on-failure
+    ports:
+      - 8080:8080
+      - 4689:4689
+      - 14014:14014
+    volumes:
+      - "$JRPC/data/Mainnet/IoTeX:/var/data"
+      - "$JRPC/log/Mainnet/IoTeX:/var/log"
+      - "$JRPC/etc/Mainnet/IoTeX/config-override.yaml:/etc/iotex/config.yaml"
+      - "$JRPC/etc/Mainnet/IoTeX/genesis-override.yaml:/etc/iotex/genesis.yaml"
+    command: iotex-server -config-path=/etc/iotex/config.yaml -genesis-path=/etc/iotex/genesis.yaml -plugin=gateway
+
+  #redis requires your host PC to set vm.overcommit_memory=1 in your host's etc/sysctl.conf file and then run `sudo sysctl --system`
+  redis:
+    container_name: redis
+    image: "redis:6.2.4-alpine3.14"
+    restart: on-failure
+    #Uncomment this line to change port and other redis runtime options
+    # command: --appendonly yes --port 6379
+    ports:
+      - 6379:6379
+    volumes:
+      - "$JRPC/data/Mainnet/redis:/data/"
+      #Uncomment this line to override redis configuration
+      # - "$JRPC/etc/Testnet/redis/redis.conf:/etc/redis/redis.conf" 
+    
+  babel:
+    container_name: iotex-babel-api
+    image: jrpc1/iotex-babel-api:latest
+    #Uncomment this section if you want to build the babel-api repository yourself and run it as an image instead of pulling from DockerHub
+    # build:
+    #     context: ./external/iotex-babel-api
+    #     dockerfile: Dockerfile
+    depends_on:
+      - iotex
+      - redis
+    ports:
+      - 8545:8545
+    environment:
+      - PORT=8545
+      - CHAIN_ID=4689
+      - END_POINT=http://iotex:14014
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    command: npm start

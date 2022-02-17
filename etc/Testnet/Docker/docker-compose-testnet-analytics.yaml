@@ -1,0 +1,100 @@
+version: '2'
+
+services:
+  iotex:
+    container_name: iotex-core-testnet
+    image: iotex/iotex-core:v1.6.3
+    restart: on-failure
+    ports:
+      - 8081:8080
+      - 4690:4689
+      - 14015:14014
+    volumes:
+      - "$JRPC/data/IoTeX_Testnet_Data:/var/data"
+      - "$JRPC/log/IoTeX_Testnet_Log:/var/log"
+      - "$JRPC/etc/IoTeX_Testnet_Etc/config.yaml:/etc/iotex/config_override.yaml"
+      - "$JRPC/etc/IoTeX_Testnet_Etc/genesis.yaml:/etc/iotex/genesis.yaml"
+    command: iotex-server -config-path=/etc/iotex/config_override.yaml -genesis-path=/etc/iotex/genesis.yaml -plugin=gateway
+
+  redis:
+    container_name: redis-testnet
+    image: "redis:6.2.4-alpine3.14"
+    restart: on-failure
+    command: redis-server --appendonly yes
+    ports:
+      - 6380:6379
+    volumes:
+      - "$JRPC/data/IoTeX_Testnet_Data/redis_data:/data/"
+    
+  babel:
+    container_name: babel-api-testnet
+    build: 
+        context: ./external/babel-api
+        dockerfile: Dockerfile
+    depends_on:
+      - iotex
+      - redis
+    ports:
+      - 8546:8545
+    environment:
+      - PORT=8545
+      - CHAIN_ID=4690
+      - END_POINT=http://iotex:14015
+      - REDIS_HOST=redis
+    command: npm start
+
+  mysql:
+    container_name: mysql-testnet
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: analytics
+    ports:
+      - 3307:3306
+      - 33061:33060
+    cap_add:
+      - SYS_NICE
+    volumes:
+      - "$JRPC/data/IoTeX_Testnet_Data/mysql:/var/lib/mysql"
+
+  adminer:
+    container_name: adminer-testnet
+    image: adminer
+    restart: always
+    ports:
+      - 9091:8080
+
+  election:
+    container_name: election-testnet
+    build: 
+      context: ./external/iotex-election
+      dockerfile: Dockerfile
+    restart: "no"
+    ports:
+      - 8090:8089
+    volumes:
+      - "$JRPC/etc/IoTeX_Testnet_Etc/election.yaml:/etc/iotex/config_override.yaml"
+    environment:
+      - CONFIG=/etc/iotex/config_override.yaml
+    command: iotex-server -config=/etc/iotex/config_override.yaml
+
+  analytics:
+    container_name: analytics-testnet
+    build: 
+        context: ./external/iotex-analytics
+        dockerfile: Dockerfile
+    restart: "no"
+    depends_on:
+      - iotex
+      - mysql
+    ports:
+      - 7089:8089
+    environment:
+      - CONFIG=/etc/iotex/config.yaml
+      - CHAIN_ENDPOINT=iotex:14014
+      - ELECTION_ENDPOINT=election:8090
+      - CONNECTION_STRING=root:example@tcp(mysql:3306)/
+      - DB_NAME=analytics
+    command: iotex-server
