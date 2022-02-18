@@ -25,3 +25,18 @@
 [submodule "external/iotex-babel-api"]
 	path = external/iotex-babel-api
 	url = https://github.com/jrynkiew/iotex-babel-api
+[submodule "external/node-launcher"]
+	path = external/node-launcher
+	url = https://github.com/decentralized-authority/node-launcher.git
+[submodule "external/cmake"]
+	path = external/cmake
+	url = https://gitlab.kitware.com/cmake/cmake.git
+[submodule "external/emsdk"]
+	path = external/emsdk
+	url = https://github.com/emscripten-core/emsdk.git
+[submodule "external/hello_imgui"]
+	path = external/hello_imgui
+	url = https://github.com/jrynkiew/hello_imgui.git
+[submodule "external/glfw"]
+	path = external/glfw
+	url = https://github.com/glfw/glfw.git

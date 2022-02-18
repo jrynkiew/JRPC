@@ -13,8 +13,8 @@ sudo apt-get install docker
 sudo apt-get install docker-compose
 
 3. clone this repo and Add JRPC home directory to your profile (Set it to the current directory)
-git clone https://github.com/jrynkiew/JRPC
-export JRPC=$PWD
+`git clone https://github.com/jrynkiew/JRPC`
+`export JRPC=$PWD`
 
 #Alternatively add the following lines to the end of the file ~/.profile (where the JRPC path is your own specified path)
 JRPC="/your/path/to/JRPC"
@@ -33,6 +33,14 @@ curl https://raw.githubusercontent.com/iotexproject/iotex-bootstrap/v1.6.3/trie.
 
 
 #In testing cmake the GUI application 
+1. sudo apt-get update $ sudo apt-get install git
+2. git submodule init
+3. git submodule update
+4. cd external/cmake && sudo apt-get install build-essential libgl1-mesa-dev qt5-default
+./bootstrap --qt-gui && make && sudo make install
+5. cd external/emsdk && ./emsdk install latest && ./emsdk activate latest && echo 'source "/home/jeremi/Code/JRPC/external/emsdk/emsdk_env.sh"' >> $HOME/.bash_profile
+6. sudo apt-get install libsdl2-dev libsdl2-image-dev install xorg-dev
+
 cmake-gui . //then set build location to JRPC/build folder configure and generate
 cd build
 make
