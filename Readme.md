@@ -12,26 +12,27 @@ sudo apt-get install docker
 2. Install Docker Compose
 sudo apt-get install docker-compose
 
-3. Add JRPC home directory to your profile as an export (add it to the end of the file)
-vim ~/.profile
+3. clone this repo and Add JRPC home directory to your profile (Set it to the current directory)
+git clone https://github.com/jrynkiew/JRPC
+export JRPC=$PWD
 
-#add the following lines (where the JRPC path is your own specified path)
-JRPC="/home/jeremi/Code/JRPC"
+#Alternatively add the following lines to the end of the file ~/.profile (where the JRPC path is your own specified path)
+JRPC="/your/path/to/JRPC"
 export JRPC
+#then save the changes and run `source ~/.profile` in terminal
 
 4. Install latest IoTeX data
 curl -L https://t.iotex.me/testnet-data-latest > $JRPC/data/IoTeX_Testnet_Data/data.tar.gz
 tar -xzf data.tar.gz
 #extract or move the data to the IoTeX_Testnet_Data or IoTeX_Mainnet_Data folder root
-curl https://raw.githubusercontent.com/iotexproject/iotex-bootstrap/v1.6.3/trie.db.patch > $JRPC/data/IoTeX_Testnet_Data/trie.db.patch
+curl https://raw.githubusercontent.com/iotexproject/iotex-bootstrap/v1.6.3/trie.db.patch > $JRPC/data/Testnet/IoTeX/trie.db.patch
 
-5. Before you run the full node with analytics docker-compose up command, you need to synch up your data with the IoTeX testnet or mainnet. If you use the gateway plugin, you need to index the data too, before running the analytics node.
+5. Run `./start.sh`to start Mainnet or Testnet or both
 
-docker-compose -f docker-compose-testnet-minimal.yaml up --no-deps --build
-
-7. docker-compose -f docker-compose-testnet-analytics.yaml up --no-deps --build
+6. Run `./stop.sh` to stop a given stack (Testnet or Mainnet)
 
 
+#In testing cmake the GUI application 
 cmake-gui . //then set build location to JRPC/build folder configure and generate
 cd build
 make
