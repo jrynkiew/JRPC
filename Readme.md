@@ -7,27 +7,39 @@ Users active on one platform can redeem the same points on another gaming platfo
 install:
 
 1. Install Docker
-sudo apt-get install docker
+
+`sudo apt-get install docker`
 
 2. Install Docker Compose
-sudo apt-get install docker-compose
+
+`sudo apt-get install docker-compose`
 
 3. clone this repo and Add JRPC home directory to your profile (Set it to the current directory)
+<<<<<<< HEAD
 `git clone https://github.com/jrynkiew/JRPC`
 `export JRPC=$PWD`
+=======
+>>>>>>> d5724eba54f1b65654bb8f084132f2339d8cdc41
 
-#Alternatively add the following lines to the end of the file ~/.profile (where the JRPC path is your own specified path)
-JRPC="/your/path/to/JRPC"
-export JRPC
-#then save the changes and run `source ~/.profile` in terminal
+`git clone https://github.com/jrynkiew/JRPC`
+
+`cd JRPC`
+
+`export JRPC=$PWD`
 
 4. Install latest IoTeX data
-curl -L https://t.iotex.me/testnet-data-latest > $JRPC/data/IoTeX_Testnet_Data/data.tar.gz
-tar -xzf data.tar.gz
-#extract or move the data to the IoTeX_Testnet_Data or IoTeX_Mainnet_Data folder root
-curl https://raw.githubusercontent.com/iotexproject/iotex-bootstrap/v1.6.3/trie.db.patch > $JRPC/data/Testnet/IoTeX/trie.db.patch
 
-5. Run `./start.sh`to start Mainnet or Testnet or both
+`curl -L https://t.iotex.me/testnet-data-latest > $JRPC/data/Testnet/IoTeX/data.tar.gz`
+
+`tar -xzf $JRPC/data/Testnet/IoTeX/data.tar.gz -C $JRPC/data/Testnet/IoTeX/`
+
+`mv $JRPC/data/Testnet/IoTeX/data/* $JRPC/data/Testnet/IoTeX/`
+
+`rm -r $JRPC/data/Testnet/IoTeX/data`
+
+`curl https://raw.githubusercontent.com/iotexproject/iotex-bootstrap/v1.6.3/trie.db.patch > $JRPC/data/Testnet/IoTeX/trie.db.patch`
+
+5. Run `./start.sh` from JRPC root folder to start Mainnet or Testnet
 
 6. Run `./stop.sh` to stop a given stack (Testnet or Mainnet)
 
@@ -45,5 +57,6 @@ cmake-gui . //then set build location to JRPC/build folder configure and generat
 cd build
 make
 
+#ToDo
 deploy docker swarm:
 docker-compose up
