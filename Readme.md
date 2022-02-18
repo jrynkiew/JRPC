@@ -23,7 +23,7 @@ install:
 `export JRPC=$PWD`
 
 4. Install latest IoTeX data
-5. 
+
 `curl -L https://t.iotex.me/testnet-data-latest > $JRPC/data/Testnet/IoTeX/data.tar.gz`
 
 `tar -xzf $JRPC/data/Testnet/IoTeX/data.tar.gz -C $JRPC/data/Testnet/IoTeX/`
