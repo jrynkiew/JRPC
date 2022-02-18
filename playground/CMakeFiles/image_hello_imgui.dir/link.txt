@@ -1,1 +1,0 @@
-/usr/bin/c++ -O2 -g -DNDEBUG CMakeFiles/image_hello_imgui.dir/image_hello_imgui.cpp.o -o image_hello_imgui  ../external/hello_imgui/src/hello_imgui/libhello_imgui.a ../libimguiquat.a ../libimgui.a /usr/local/lib/libSDL2.so -Wl,-rpath,/usr/local/lib -Wl,--enable-new-dtags /usr/local/lib/libSDL2main.a ../external/hello_imgui/external/libglad.a -lstdc++ -ldl 

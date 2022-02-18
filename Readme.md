@@ -15,11 +15,6 @@ install:
 `sudo apt-get install docker-compose`
 
 3. clone this repo and Add JRPC home directory to your profile (Set it to the current directory)
-<<<<<<< HEAD
-`git clone https://github.com/jrynkiew/JRPC`
-`export JRPC=$PWD`
-=======
->>>>>>> d5724eba54f1b65654bb8f084132f2339d8cdc41
 
 `git clone https://github.com/jrynkiew/JRPC`
 
