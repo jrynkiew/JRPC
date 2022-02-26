@@ -19,9 +19,6 @@
 [submodule "external/iotex-babel-api"]
 	path = external/iotex-babel-api
 	url = https://github.com/jrynkiew/iotex-babel-api
-[submodule "external/node-launcher"]
-	path = external/node-launcher
-	url = https://github.com/decentralized-authority/node-launcher.git
 [submodule "external/cmake"]
 	path = external/cmake
 	url = https://gitlab.kitware.com/cmake/cmake.git
@@ -34,3 +31,12 @@
 [submodule "external/imgui"]
 	path = external/imgui
 	url = https://github.com/jrynkiew/imgui.git
+[submodule "external/mimo-analytics"]
+	path = external/mimo-analytics
+	url = https://github.com/jrynkiew/mimo-analytics.git
+[submodule "external/node-launcher"]
+	path = external/node-launcher
+	url = https://github.com/jrynkiew/node-launcher
+[submodule "external/iotex-core"]
+	path = external/iotex-core
+	url = https://github.com/jrynkiew/iotex-core.git

@@ -98,3 +98,5 @@ services:
       - CONNECTION_STRING=root:example@tcp(mysql:3306)/
       - DB_NAME=analytics
     command: iotex-server
+
+    #TheGraph & Subchains

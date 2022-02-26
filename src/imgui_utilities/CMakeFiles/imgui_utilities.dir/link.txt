@@ -1,2 +1,0 @@
-/usr/bin/ar qc libimgui_utilities.a CMakeFiles/imgui_utilities.dir/__/__/external/ImGuiColorTextEdit/TextEditor.cpp.o CMakeFiles/imgui_utilities.dir/HyperlinkHelper.cpp.o CMakeFiles/imgui_utilities.dir/ImGuiExt.cpp.o CMakeFiles/imgui_utilities.dir/MarkdownHelper.cpp.o
-/usr/bin/ranlib libimgui_utilities.a

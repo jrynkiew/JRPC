@@ -1,2 +1,0 @@
-/usr/bin/ar qc libsource_parse.a CMakeFiles/source_parse.dir/GuiHeaderTree.cpp.o CMakeFiles/source_parse.dir/HeaderTree.cpp.o CMakeFiles/source_parse.dir/ImGuiCodeParser.cpp.o CMakeFiles/source_parse.dir/ImGuiDemoParser.cpp.o CMakeFiles/source_parse.dir/Sources.cpp.o
-/usr/bin/ranlib libsource_parse.a
