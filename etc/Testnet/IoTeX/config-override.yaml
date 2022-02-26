@@ -7,7 +7,7 @@ network:
     - /dns4/bootnode-1.testnet.iotex.one/tcp/4689/ipfs/12D3KooWS7hkdFozeUqriUxv7zw8Y6NCeV8E5HUbgmVkGJUv4jHS
 
 chain:
-  producerPrivKey: 
+  # producerPrivKey: 
   id: 2
   evmNetworkID: 4690
   chainDBPath: "/var/data/chain.db"

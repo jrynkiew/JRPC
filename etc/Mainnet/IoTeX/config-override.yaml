@@ -12,7 +12,7 @@ network:
 
 chain:
   # If you are a delegate, make sure producerPrivKey is the key for the operator address you have registered.
-  producerPrivKey: 
+  # producerPrivKey: 
   chainDBPath: "/var/data/chain.db"
   trieDBPath: "/var/data/trie.db"
   indexDBPath: "/var/data/index.db"
