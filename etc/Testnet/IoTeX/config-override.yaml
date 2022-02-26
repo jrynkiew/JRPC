@@ -1,12 +1,13 @@
 network:
-  externalHost: 89.70.227.146
+# your public IP here
+  externalHost: 
   externalPort: 4690
   bootstrapNodes:
     - /dns4/bootnode-0.testnet.iotex.one/tcp/4689/ipfs/12D3KooWFnaTYuLo8Mkbm3wzaWHtUuaxBRe24Uiopu15Wr5EhD3o
     - /dns4/bootnode-1.testnet.iotex.one/tcp/4689/ipfs/12D3KooWS7hkdFozeUqriUxv7zw8Y6NCeV8E5HUbgmVkGJUv4jHS
 
 chain:
-  producerPrivKey: 0c3b5e186615db7da54bb545a387793532d6c6ae885c13d4d85a9a4c56512158
+  producerPrivKey: 
   id: 2
   evmNetworkID: 4690
   chainDBPath: "/var/data/chain.db"
