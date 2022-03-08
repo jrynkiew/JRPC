@@ -10,11 +10,11 @@ services:
       - 4690:4689
       - 14015:14014
     volumes:
-      - "$JRPC/data/IoTeX_Testnet_Data:/var/data"
-      - "$JRPC/log/IoTeX_Testnet_Log:/var/log"
-      - "$JRPC/etc/IoTeX_Testnet_Etc/config.yaml:/etc/iotex/config_override.yaml"
-      - "$JRPC/etc/IoTeX_Testnet_Etc/genesis.yaml:/etc/iotex/genesis.yaml"
-    command: iotex-server -config-path=/etc/iotex/config_override.yaml -genesis-path=/etc/iotex/genesis.yaml -plugin=gateway
+      - "$JRPC/data/Testnet/IoTeX:/var/data"
+      - "$JRPC/log/Testnet/IoTeX:/var/log"
+      - "$JRPC/etc/Testnet/IoTeX/config-override.yaml:/etc/iotex/config.yaml"
+      - "$JRPC/etc/Testnet/IoTeX/genesis-override.yaml:/etc/iotex/genesis.yaml"
+    command: iotex-server -config-path=/etc/iotex/config.yaml -genesis-path=/etc/iotex/genesis.yaml -plugin=gateway
 
   redis:
     container_name: redis-testnet
@@ -24,7 +24,7 @@ services:
     ports:
       - 6380:6379
     volumes:
-      - "$JRPC/data/IoTeX_Testnet_Data/redis_data:/data/"
+      - "$JRPC/data/Testnet/redis:/data/"
     
   babel:
     container_name: babel-api-testnet
