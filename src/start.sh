@@ -14,8 +14,8 @@ DEBUG_flag=$(case "$DEBUG" in
 esac)
 
 MODE_flag=$(case "$MODE" in
-  (T|t)    echo "testnet"  ;;
-  (M|m)    echo "mainnet"  ;;
+  (T|t)    echo "Testnet"  ;;
+  (M|m)    echo "Mainnet"  ;;
 esac)
 
 case $MODE in  
