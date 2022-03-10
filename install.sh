@@ -6,10 +6,7 @@ green=`tput setaf 2`
 yellow=`tput setaf 214`
 reset=`tput sgr0`
 
-if [[ ! -d "$JRPC" ]]; then 
-    export JRPC="$(pwd)"
-    echo 'export JRPC="$(pwd)"' >> ~/.bashrc
-fi
+. ./tools/setenv.sh
 
 MODE_flag=``
 DEBUG_flag=``

@@ -3,7 +3,7 @@ version: '2'
 services:
   iotex:
     container_name: iotex-core-testnet
-    image: iotex/iotex-core:v1.6.3
+    image: iotex/iotex-core:v1.7.0-rc2
     restart: on-failure
     ports:
       - 8081:8080
