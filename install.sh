@@ -68,7 +68,7 @@ case $DOWNLOADDATA_flag in
 esac
 
 
-read -p "${green}Do you wish to proceed with the installation? No (${red}N${reset}) or Yes (${green}Y${reset}): "${reset} CONTINUE
+read -p "${green}Do you wish to proceed with the installation?${reset} No (${red}N${reset}) or Yes (${green}Y${reset}): " CONTINUE
 case $CONTINUE in
   y|Y)
     echo "We will now install the $MODE_flag IoTeX server node $latestversion" ;;
