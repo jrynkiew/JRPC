@@ -6,14 +6,13 @@ green=`tput setaf 2`
 yellow=`tput setaf 214`
 reset=`tput sgr0`
 
-. ./tools/setenv.sh
-
 MODE_flag=``
 DEBUG_flag=``
 DOWNLOADDATA_flag=``
 
 latestversion=$(curl --silent "https://api.github.com/repos/iotexproject/iotex-core/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")')
 
+. ./tools/setenv.sh $latestversion
 
 # Start of script - getting necessary user input
 read -p "Do you want to install Testnet (${red}T${reset}) or Mainnet (${green}M${reset})?: " MODE
@@ -91,11 +90,11 @@ mkdir -p $JRPC/temp/$MODE_flag/IoTeX
 
 case $DOWNLOADDATA_flag in
   true) 
+    # echo "${green}Downloading db patch${reset}"
+    # curl https://raw.githubusercontent.com/iotexproject/iotex-bootstrap/$latestversion/trie.db.patch > $JRPC/data/$MODE_flag/IoTeX/trie.db.patch
+
     echo "${green}Downloading latest data${reset}"
     curl -L -o $JRPC/temp/$MODE_flag/IoTeX/data.tar.gz https://t.iotex.me/$MODE_flag-data-with-idx-latest 
-
-    echo "${green}Downloading db patch${reset}"
-    curl https://raw.githubusercontent.com/iotexproject/iotex-bootstrap/$latestversion/trie.db.patch > $JRPC/data/$MODE_flag/IoTeX/trie.db.patch
 
     echo "${green}Extracting data to temporary directory${reset}"
     tar xvf $JRPC/temp/$MODE_flag/IoTeX/data.tar.gz -C $JRPC/temp/$MODE_flag/IoTeX/
@@ -106,7 +105,11 @@ case $DOWNLOADDATA_flag in
 
   false)
     echo "This script will attempt to use data located in ${green}$JRPC/data/$MODE_flag/IoTeX${reset}"
-    echo "If there is no data in this directory, the blockchain will attempt to synchronize from block height 0. You will need to provide your infura key in the configuration files" ;;
+    echo "If there is no data in this directory, the blockchain will attempt to synchronize from block height 0. You will need to provide your infura key in the configuration files" 
+    
+    echo "${green}Downloading poll $MODE_flag data${reset}"
+    curl -L https://storage.googleapis.com/blockchain-golden/poll."${MODE_flag,}".tar.gz > $JRPC/temp/$MODE_flag/IoTeX/poll.tar.gz; tar -xzf $JRPC/temp/$MODE_flag/IoTeX/poll.tar.gz -C $JRPC/data/$MODE_flag/IoTeX/ ;;
+
   *)
     echo "${red}Not a valid answer. Terminating${reset}"
     exit 0 ;;

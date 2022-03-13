@@ -12,6 +12,7 @@ chain:
   evmNetworkID: 4690
   chainDBPath: "/var/data/chain.db"
   trieDBPath: "/var/data/trie.db"
+  trieDBPatchFile: ""
   indexDBPath: "/var/data/index.db"
   bloomfilterIndexDBPath: "/var/data/bloomfilter.index.db"
   candidateIndexDBPath: "/var/data/candidate.index.db"
@@ -19,7 +20,7 @@ chain:
   maxCacheSize: 1000
   committee:
     gravityChainAPIs:
-      - https://mainnet.infura.io/v3/4a8f3db8e4b746349ef9af1bcf7d936d
+      - https://mainnet.infura.io/v3/b355cae6fafc4302b106b937ee6c15af
     numOfRetries: 20
     paginationSize: 255
     cacheSize: 1000

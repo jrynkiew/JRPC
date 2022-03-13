@@ -1,0 +1,8 @@
+curl --location --request POST 'http://localhost:9545' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+	"jsonrpc":"2.0",
+	"method":"web3_clientVersion",
+	"params":[],
+	"id":1
+}'
