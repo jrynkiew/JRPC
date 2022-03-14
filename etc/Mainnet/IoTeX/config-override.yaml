@@ -15,6 +15,7 @@ chain:
   # producerPrivKey: 
   chainDBPath: "/var/data/chain.db"
   trieDBPath: "/var/data/trie.db"
+  # trieDBPatchFile: "trie.db.patch"
   trieDBPatchFile: ""
   indexDBPath: "/var/data/index.db"
   bloomfilterIndexDBPath: "/var/data/bloomfilter.index.db"
@@ -24,8 +25,9 @@ chain:
   committee:
     gravityChainAPIs:
       # please change the infura key to your key (e.g., https://mainnet.infura.io/v3/YOUR_KEY)
-      #- https://mainnet.infura.io/v3/b355cae6fafc4302b106b937ee6c15af
-      - https://mainnet.infura.io/v3/498aed8a973f42a596d8e12b16dd42c7
+      # - https://mainnet.infura.io/v3/b355cae6fafc4302b106b937ee6c15af
+      # - https://mainnet.infura.io/v3/498aed8a973f42a596d8e12b16dd42c7
+      - https://eth-trace.gateway.pokt.network/v1/lb/622f8eedb2feb2003981695f
 
     numOfRetries: 20
     paginationSize: 255

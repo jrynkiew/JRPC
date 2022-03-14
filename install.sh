@@ -90,7 +90,8 @@ mkdir -p $JRPC/temp/$MODE_flag/IoTeX
 
 case $DOWNLOADDATA_flag in
   true) 
-    # echo "${green}Downloading db patch${reset}"
+    # If in future releases IoTeX requires a data patch, uncomment this script to attempt to download the latest patch and install it.
+    # You will need to uncomment line 15 in JRPC/etc/$MODE_flag/IoTeX/config-override.yaml
     # curl https://raw.githubusercontent.com/iotexproject/iotex-bootstrap/$latestversion/trie.db.patch > $JRPC/data/$MODE_flag/IoTeX/trie.db.patch
 
     echo "${green}Downloading latest data${reset}"
@@ -105,10 +106,11 @@ case $DOWNLOADDATA_flag in
 
   false)
     echo "This script will attempt to use data located in ${green}$JRPC/data/$MODE_flag/IoTeX${reset}"
-    echo "If there is no data in this directory, the blockchain will attempt to synchronize from block height 0. You will need to provide your infura key in the configuration files" 
+    echo "If there is no data in this directory, the blockchain will attempt to synchronize from block height 0. You will need to provide your Infura or Pocket endpoint in the configuration files" ;;
     
-    echo "${green}Downloading poll $MODE_flag data${reset}"
-    curl -L https://storage.googleapis.com/blockchain-golden/poll."${MODE_flag,}".tar.gz > $JRPC/temp/$MODE_flag/IoTeX/poll.tar.gz; tar -xzf $JRPC/temp/$MODE_flag/IoTeX/poll.tar.gz -C $JRPC/data/$MODE_flag/IoTeX/ ;;
+    # If the node does not start synching from block height 0, it might be due to incorrect Pocket Ethereum Mainnet Tracing endpoint."
+    # If you do not have any endpoints to use, you can uncomment the below line to download the static poll.db data files, which will overcome the need to connect to Mainnet Ethereum Tracing nodes.
+    # curl -L https://storage.googleapis.com/blockchain-golden/poll."${MODE_flag,}".tar.gz > $JRPC/temp/$MODE_flag/IoTeX/poll.tar.gz; tar -xzf $JRPC/temp/$MODE_flag/IoTeX/poll.tar.gz -C $JRPC/data/$MODE_flag/IoTeX/ ;;
 
   *)
     echo "${red}Not a valid answer. Terminating${reset}"
@@ -118,18 +120,11 @@ esac
 # Start the build scripts for the iotex-core, babel-api and redis servers 
 
 case $MODE_flag in  
-  Testnet) 
-    echo "${green}Building the Testnet IoTeX server node${reset}" 
+  Testnet|Mainnet) 
+    echo "${green}Building the $MODE_flag IoTeX server node${reset}" 
     echo "${green}Starting docker-compose scripts${reset}"
-    echo "running command ${purple} docker-compose -p JRPC-$MODE_flag -f $JRPC/etc/Testnet/Docker/docker-compose-$MODE_flag-minimal.yaml up $DEBUG_flag --no-deps --build${reset}"
-    docker-compose -p JRPC-$MODE_flag -f $JRPC/etc/Testnet/Docker/docker-compose-$MODE_flag-minimal.yaml up $DEBUG_flag --no-deps --build ;; 
-  
-  Mainnet) 
-    echo "${purple}Main network selected${reset}" 
-    echo "${green}Starting docker-compose scripts${reset}"
-    echo "running command ${purple} docker-compose -p JRPC-$MODE_flag -f $JRPC/etc/Mainnet/Docker/docker-compose-$MODE_flag-minimal.yaml up $DEBUG_flag --no-deps --build${reset}"
-    docker-compose -p JRPC-$MODE_flag -f $JRPC/etc/Mainnet/Docker/docker-compose-$MODE_flag-minimal.yaml up $DEBUG_flag --no-deps --build ;; 
-  
+    echo "running command ${purple} docker-compose -p JRPC-$MODE_flag -f $JRPC/etc/$MODE_flag/Docker/docker-compose-$MODE_flag-minimal.yaml up $DEBUG_flag --no-deps --build${reset}"
+    docker-compose -p JRPC-$MODE_flag -f $JRPC/etc/$MODE_flag/Docker/docker-compose-$MODE_flag-minimal.yaml up $DEBUG_flag --no-deps --build ;; 
   *) 
     echo "${red}Not a valid mode. Please enter in M for Mainnet or T for Testnet${reset}" ;; 
 esac
