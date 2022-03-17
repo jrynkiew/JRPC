@@ -16,7 +16,6 @@ chain:
   chainDBPath: "/var/data/chain.db"
   trieDBPath: "/var/data/trie.db"
   # trieDBPatchFile: "trie.db.patch"
-  trieDBPatchFile: ""
   indexDBPath: "/var/data/index.db"
   bloomfilterIndexDBPath: "/var/data/bloomfilter.index.db"
   candidateIndexDBPath: "/var/data/candidate.index.db"
