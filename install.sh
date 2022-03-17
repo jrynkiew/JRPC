@@ -87,13 +87,16 @@ mkdir -p $JRPC/log/$MODE_flag/IoTeX
 echo "${green}Creating $JRPC/temp/$MODE_flag/IoTeX directory${reset}"
 mkdir -p $JRPC/temp/$MODE_flag/IoTeX
 
+case $MODE_flag in  
+  Mainnet) 
+    # If in future releases IoTeX requires a data patch, uncomment this script to attempt to download the latest patch and install it.
+    echo "${green}Downloading latest patch${reset}"
+    curl https://raw.githubusercontent.com/iotexproject/iotex-bootstrap/$latestversion/trie.db.patch > $JRPC/data/$MODE_flag/IoTeX/trie.db.patch ;;
+
+esac
 
 case $DOWNLOADDATA_flag in
   true) 
-    # If in future releases IoTeX requires a data patch, uncomment this script to attempt to download the latest patch and install it.
-    # You will need to uncomment line 15 in JRPC/etc/$MODE_flag/IoTeX/config-override.yaml
-    # curl https://raw.githubusercontent.com/iotexproject/iotex-bootstrap/$latestversion/trie.db.patch > $JRPC/data/$MODE_flag/IoTeX/trie.db.patch
-
     echo "${green}Downloading latest data${reset}"
     curl -L -o $JRPC/temp/$MODE_flag/IoTeX/data.tar.gz https://t.iotex.me/$MODE_flag-data-with-idx-latest 
 
@@ -110,6 +113,7 @@ case $DOWNLOADDATA_flag in
     
     # If the node does not start synching from block height 0, it might be due to incorrect Pocket Ethereum Mainnet Tracing endpoint."
     # If you do not have any endpoints to use, you can uncomment the below line to download the static poll.db data files, which will overcome the need to connect to Mainnet Ethereum Tracing nodes.
+    # echo "${green}Downloading latest poll.db file${reset}"
     # curl -L https://storage.googleapis.com/blockchain-golden/poll."${MODE_flag,}".tar.gz > $JRPC/temp/$MODE_flag/IoTeX/poll.tar.gz; tar -xzf $JRPC/temp/$MODE_flag/IoTeX/poll.tar.gz -C $JRPC/data/$MODE_flag/IoTeX/ ;;
 
   *)
