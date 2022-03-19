@@ -7,6 +7,7 @@ yellow=`tput setaf 214`
 reset=`tput sgr0`
 
 MODE_flag=``
+BABEL_API_flag=``
 DEBUG_flag=``
 DOWNLOADDATA_flag=``
 
@@ -19,6 +20,13 @@ read -p "Do you want to install Testnet (${red}T${reset}) or Mainnet (${green}M$
 MODE_flag=$(case "$MODE" in
   (T|t)    echo "Testnet"  ;;
   (M|m)    echo "Mainnet"  ;;
+esac)
+
+# Start of script - getting necessary user input
+read -p "Do you want to install the extra babel-api add-on (additional costs may be incurred)? No (${red}N${reset}) or Yes (${green}Y${reset})?: " BABEL_API
+BABEL_API_flag=$(case "$BABEL_API" in
+  (Y|y)    echo "babel-api"  ;;
+  (N|n)    echo "minimal"  ;;
 esac)
 
 read -p "Do you want to set up the node in Debug (${red}D${reset}) or Release (${green}R${reset}) mode?: " DEBUG
@@ -127,8 +135,8 @@ case $MODE_flag in
   Testnet|Mainnet) 
     echo "${green}Building the $MODE_flag IoTeX server node${reset}" 
     echo "${green}Starting docker-compose scripts${reset}"
-    echo "running command ${purple} docker-compose -p JRPC-$MODE_flag -f $JRPC/etc/$MODE_flag/Docker/docker-compose-$MODE_flag-minimal.yaml up $DEBUG_flag --no-deps --build${reset}"
-    docker-compose -p JRPC-$MODE_flag -f $JRPC/etc/$MODE_flag/Docker/docker-compose-$MODE_flag-minimal.yaml up $DEBUG_flag --no-deps --build ;; 
+    echo "running command ${purple} docker-compose -p JRPC-$MODE_flag -f $JRPC/etc/$MODE_flag/Docker/docker-compose-$MODE_flag-$BABEL_API_flag.yaml up $DEBUG_flag --no-deps --build${reset}"
+    docker-compose -p JRPC-$MODE_flag -f $JRPC/etc/$MODE_flag/Docker/docker-compose-$MODE_flag-$BABEL_API_flag.yaml up $DEBUG_flag --no-deps --build ;; 
   *) 
     echo "${red}Not a valid mode. Please enter in M for Mainnet or T for Testnet${reset}" ;; 
 esac
