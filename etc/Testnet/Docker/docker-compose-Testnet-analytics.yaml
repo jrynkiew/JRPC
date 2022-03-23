@@ -1,14 +1,16 @@
 version: '2'
 
+# add election service
 services:
   iotex:
     container_name: iotex-core-testnet
-    image: iotex/iotex-core:$JRPC_version
+    image: iotex/iotex-core:latest
     restart: on-failure
     ports:
-      - 8081:8080
-      - 4690:4689
-      - 14015:14014
+      - 9080:8080
+      - 5690:4690
+      - 24014:14014
+      - 25014:15014
     volumes:
       - "$JRPC/data/Testnet/IoTeX:/var/data"
       - "$JRPC/log/Testnet/IoTeX:/var/log"

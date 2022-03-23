@@ -3,7 +3,10 @@ version: '2'
 services:
   iotex:
     container_name: iotex-core-testnet
-    image: iotex/iotex-core:v1.7.0-rc2
+    image: iotex/iotex-core:latest
+    # build: 
+    #     context: $JRPC/external/iotex-core
+    #     dockerfile: Dockerfile
     restart: on-failure
     ports:
       - 9080:8080
@@ -16,3 +19,4 @@ services:
       - "$JRPC/etc/Testnet/IoTeX/config-override.yaml:/etc/iotex/config.yaml"
       - "$JRPC/etc/Testnet/IoTeX/genesis-override.yaml:/etc/iotex/genesis.yaml"
     command: iotex-server -config-path=/etc/iotex/config.yaml -genesis-path=/etc/iotex/genesis.yaml -plugin=gateway
+

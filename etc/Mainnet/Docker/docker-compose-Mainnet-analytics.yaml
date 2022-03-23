@@ -11,6 +11,7 @@ services:
       - 8080:8080
       - 4689:4689
       - 14014:14014
+      - 15014:15014
     volumes:
       - "$JRPC/data/IoTeX_Mainnet_Data:/var/data"
       - "$JRPC/log/IoTeX_Mainnet_Log:/var/log"

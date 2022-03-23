@@ -7,7 +7,7 @@ port: 8089
 committee:
   numOfRetries: 8
   gravityChainAPIs:
-  - https://kovan.infura.io/v3/6af04e7e165d47faaa5ef375aaf60792
+  - https://eth-trace.gateway.pokt.network/v1/lb/622f8eedb2feb2003981695f
   gravityChainHeightInterval: 100
   gravityChainStartHeight: 10518000
   gravityChainCeilingHeight: 19937937
@@ -24,7 +24,7 @@ committee:
 enableVoteSync: false
 voteSync:
   gravityChainAPIs:
-  - https://mainnet.infura.io/v3/6af04e7e165d47faaa5ef375aaf60792
+  - https://eth-trace.gateway.pokt.network/v1/lb/622f8eedb2feb2003981695f
   gravityChainTimeInterval: 10m
   operatorPrivateKey: "a000000000000000000000000000000000000000000000000000000000000000"
   ioTeXAPI: "api.testnet.iotex.one:443"
