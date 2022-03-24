@@ -4,7 +4,7 @@ version: '2'
 services:
   iotex:
     container_name: iotex-core-testnet
-    image: iotex/iotex-core:latest
+    image: iotex/iotex-core:$JRPC_version
     restart: on-failure
     ports:
       - 9080:8080

@@ -145,7 +145,7 @@ case $DOWNLOADDATA_flag in
 
   false)
     echo "This script will attempt to use data located in ${green}$JRPC/data/$MODE_flag/IoTeX${reset}"
-    echo "If there is no data in this directory, the blockchain will attempt to synchronize from block height 0. You will need to provide your Infura or Pocket endpoint in the configuration files" ;;
+    echo "If there is no data in this directory, the blockchain will attempt to synchronize from block height 0. You will need to provide your Infura or Pocket endpoint in the configuration files"
     
     # If the node does not start synching from block height 0, it might be due to incorrect Pocket Ethereum Mainnet Tracing endpoint."
     # If you do not have any endpoints to use, you can uncomment the below line to download the static poll.db data files, which will overcome the need to connect to Mainnet Ethereum Tracing nodes.

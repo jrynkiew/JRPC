@@ -4,6 +4,7 @@ services:
   iotex:
     container_name: iotex-core
     image: iotex/iotex-core:$JRPC_version
+    #Uncomment this section and delete the `image:` section if you want to build the iotex-core repository yourself instead pulling from docker hub
     # build: 
     #     context: $JRPC/external/iotex-core
     #     dockerfile: Dockerfile
