@@ -1,3 +1,12 @@
+# Install dependencies
+#sudo apt-get install docker
+#sudo apt-get install docker-compose
+#sudo groupadd docker
+#sudo usermod -aG docker $USER
+#newgrp docker 
+#sudo systemctl restart docker
+#git submodule update --init --recursive
+
 # Environment variables
 red=`tput setaf 1`
 purple=`tput setaf 93`
