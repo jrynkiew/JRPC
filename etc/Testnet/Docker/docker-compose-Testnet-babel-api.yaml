@@ -49,7 +49,7 @@ services:
     environment:
       - PORT=9545
       - CHAIN_ID=4690
-      - END_POINT=http://localhost:24014
+      - END_POINT=iotex:14014
       - REDIS_HOST=redis
       - REDIS_PORT=7379
     command: npm start
