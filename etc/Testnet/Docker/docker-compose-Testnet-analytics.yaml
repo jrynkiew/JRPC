@@ -41,7 +41,7 @@ services:
     environment:
       - PORT=8545
       - CHAIN_ID=4690
-      - END_POINT=http://iotex:14015
+      - END_POINT=iotex:14014
       - REDIS_HOST=redis
     command: npm start
 
