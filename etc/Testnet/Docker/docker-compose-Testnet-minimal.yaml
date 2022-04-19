@@ -3,7 +3,7 @@ version: '2'
 services:
   iotex:
     container_name: iotex-core-testnet
-    image: docker.io/jeremi/iotex-core:latest
+    image: iotex/iotex-core:$JRPC_version
     #Uncomment this section and delete the `image:` section if you want to build the iotex-core repository yourself instead pulling from docker hub
     # build: 
     #     context: $JRPC/external/iotex-core

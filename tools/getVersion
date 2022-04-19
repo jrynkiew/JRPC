@@ -1,4 +1,20 @@
-curl --location --request POST 'http://localhost:9545' \
+#!/bin/bash
+
+export ENDPOINT=$1
+
+case $ENDPOINT in
+  t)
+    PORT=25014 ;;
+
+  m)
+    PORT=15014 ;;
+
+  *)
+    echo "${red}Use <./getVersion m> for Mainnet or <./getVersion t> for Testnet ${reset}"
+    exit 0 ;;
+esac
+
+curl --location --request POST 'http://localhost:'$PORT \
 --header 'Content-Type: application/json' \
 --data-raw '{
 	"jsonrpc":"2.0",
