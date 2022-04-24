@@ -22,6 +22,8 @@ DOWNLOADDATA_flag=``
 
 latestversion=$(curl --silent "https://api.github.com/repos/iotexproject/iotex-core/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")')
 
+echo "JRPC IoTeX Full Node Build System
+"
 . ./tools/setenv.sh $latestversion
 
 # Start of script - getting necessary user input
