@@ -1,10 +1,11 @@
-![JRPC_banner](https://user-images.githubusercontent.com/63042547/155842833-de11e8d2-5493-4d92-a635-be593afa9336.png)
+# JRPC IoTeX Node Operator
+
+![JRPC_banner2](https://user-images.githubusercontent.com/63042547/166883870-faacc207-17cb-4b8d-85a6-782f8ed606cf.png)
 
 
-This is JRPC IoTeX Node Operator, a Linux based script to simplify running the IoTeX node.
 
 
-install:
+# Installation:
 
 1. Install Docker
 
@@ -14,15 +15,15 @@ install:
 
 `sudo apt-get install docker-compose`
 
-3. Install IoTeX
+3. Install IoTeX Node[^1]
 
 `./install.sh`
 
 
-You might have to do `chmod +x ./install.sh` prior to executing the script
+[^1]: You might have to do `chmod +x ./install.sh` prior to executing the script
 
 
-Donations:
+# Donations:
 
 BTC: `1LG7rjbc3vUXUkxAQ8RBC2tD7q2yAFwFdK`
 
