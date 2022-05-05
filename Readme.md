@@ -1,7 +1,7 @@
 # JRPC IoTeX Node Operator
 
-![JRPC_banner2](https://user-images.githubusercontent.com/63042547/166883870-faacc207-17cb-4b8d-85a6-782f8ed606cf.png)
 
+![JRPC_banner3](https://user-images.githubusercontent.com/63042547/166886826-84d5b690-c7a5-45eb-86d5-437d56ef0b99.png)
 
 
 
