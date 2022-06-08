@@ -1,7 +1,7 @@
 
 [submodule "external/iotex-core"]
 	path = external/iotex-core
-	url = https://github.com/jrynkiew/iotex-core
+	url = https://github.com/iotexproject/iotex-core 
 [submodule "external/iotex-babel-api"]
 	path = external/iotex-babel-api
 	url = https://github.com/jrynkiew/iotex-babel-api.git
