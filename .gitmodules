@@ -1,10 +1,10 @@
 
-[submodule "external/iotex-core"]
-	path = external/iotex-core
-	url = https://github.com/jrynkiew/iotex-core.git 
 [submodule "external/iotex-babel-api"]
 	path = external/iotex-babel-api
 	url = https://github.com/jrynkiew/iotex-babel-api.git
 [submodule "external/iotex-analytics"]
 	path = external/iotex-analytics
 	url = https://github.com/jrynkiew/iotex-analytics.git
+[submodule "external/iotex-core"]
+	path = external/iotex-core
+	url = https://github.com/jrynkiew/iotex-core.git

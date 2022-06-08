@@ -5,7 +5,7 @@
 #sudo usermod -aG docker $USER
 #newgrp docker 
 #sudo systemctl restart docker
-#git submodule update --init --recursive
+git submodule update --init --recursive
 
 # Environment variables
 red=`tput setaf 1`
