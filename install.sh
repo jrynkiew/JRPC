@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # Install dependencies
 #sudo apt-get install docker
 #sudo apt-get install docker-compose
