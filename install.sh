@@ -140,7 +140,7 @@ case $MODE_flag in
   Mainnet)
     # If in future releases IoTeX requires a data patch, uncomment this script to attempt to download the latest patch and install it.
     echo "${green}Downloading latest patch${reset}"
-    curl https://raw.githubusercontent.com/iotexproject/iotex-bootstrap/v1.7.1/trie.db.patch > $JRPC/data/$MODE_flag/IoTeX/trie.db.patch ;;
+    curl https://raw.githubusercontent.com/iotexproject/iotex-bootstrap/v1.8.2/trie.db.patch > $JRPC/data/$MODE_flag/IoTeX/trie.db.patch ;;
 esac
 
 case $DOWNLOADDATA_flag in
