@@ -8,6 +8,7 @@
 #newgrp docker 
 #sudo systemctl restart docker
 git submodule update --init --recursive
+git submodule update --remote --merge
 
 # Environment variables
 red=`tput setaf 1`
