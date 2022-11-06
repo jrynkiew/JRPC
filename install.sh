@@ -176,8 +176,8 @@ case $MODE_flag in
   Testnet|Mainnet)
     echo "${green}Building the $MODE_flag IoTeX server node${reset}"
     echo "${green}Starting docker-compose scripts${reset}"
-    echo "running command ${purple} docker-compose -p JRPC-$MODE_flag -f $JRPC/etc/$MODE_flag/Docker/docker-compose-$MODE_flag-$BABEL_API_flag.yaml up $DEBUG_flag --no-deps --build${reset}"
-    docker-compose -p JRPC-$MODE_flag -f $JRPC/etc/$MODE_flag/Docker/docker-compose-$MODE_flag-$BABEL_API_flag.yaml up $DEBUG_flag --no-deps --build ;; 
+    echo "running command ${purple} docker-compose -p jrpc-"${MODE_flag,}" -f $JRPC/etc/$MODE_flag/Docker/docker-compose-$MODE_flag-$BABEL_API_flag.yaml up $DEBUG_flag --no-deps --build${reset}"
+    docker-compose -p jrpc-"${MODE_flag,}" -f $JRPC/etc/$MODE_flag/Docker/docker-compose-$MODE_flag-$BABEL_API_flag.yaml up $DEBUG_flag --no-deps --build ;; 
   *)
     echo "${red}Not a valid mode. Please enter in M for Mainnet or T for Testnet${reset}" ;; 
 esac

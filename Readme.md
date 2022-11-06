@@ -27,7 +27,7 @@
 
 BTC: `1LG7rjbc3vUXUkxAQ8RBC2tD7q2yAFwFdK`
 
-ETH: `0x4aabba4195d1f9309c81a93cd762b76d3b0a1283`
+ETH: `0x794f72d75ded3903dea907f420ad85b4813f6385`
 
 IOTX: `io1098h946aa5us8h4fql6zptv9kjqn7cu9x9uzm0`
 
