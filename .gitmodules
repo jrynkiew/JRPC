@@ -11,3 +11,6 @@
 [submodule "external/pebble-tracker-firmware-builder"]
 	path = external/pebble-tracker-firmware-builder
 	url = https://github.com/jrynkiew/pebble-tracker-firmware-builder.git
+[submodule "external/iotex-core"]
+	path = external/iotex-core
+	url = https://github.com/iotexproject/iotex-core.git
