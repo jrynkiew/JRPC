@@ -5,9 +5,6 @@
 [submodule "external/iotex-analytics"]
 	path = external/iotex-analytics
 	url = https://github.com/jrynkiew/iotex-analytics.git
-[submodule "external/iotex-core"]
-	path = external/iotex-core
-	url = https://github.com/iotexproject/iotex-core.git
 [submodule "external/iotex-desktop-wallet-builder"]
 	path = external/iotex-desktop-wallet-builder
 	url = https://github.com/jrynkiew/iotex-desktop-wallet-builder.git
