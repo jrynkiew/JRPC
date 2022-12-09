@@ -19,7 +19,7 @@ yellow=`tput setaf 214`
 reset=`tput sgr0`
 
 MODE_flag=``
-BABEL_API_flag=``
+ANALYTICS_API_flag=``
 DEBUG_flag=``
 DOWNLOADDATA_flag=``
 
@@ -38,9 +38,9 @@ MODE_flag=$(case "$MODE" in
 esac)
 
 # Start of script - getting necessary user input
-read -p "Do you want to install the extra babel-api add-on (additional costs may be incurred)? No (${red}N${reset}) or Yes (${green}Y${reset})?: " BABEL_API
-BABEL_API_flag=$(case "$BABEL_API" in
-  (Y|y)    echo "babel-api"  ;;
+read -p "Do you want to install the extra analytics add-on? No (${red}N${reset}) or Yes (${green}Y${reset})?: " ANALYTICS_API
+ANALYTICS_API_flag=$(case "$ANALYTICS_API" in
+  (Y|y)    echo "analytics"  ;;
   (N|n)    echo "minimal"    ;;
   ( * )    echo "Error. Wrong Selection"  ;;
 esac)
@@ -72,7 +72,7 @@ case $MODE_flag in
       R|r)    echo "Debug: Release" | tee -a "$LOGFILE" ;;
       *)      echo "Debug: $DEBUG_flag" ;;
     esac
-    echo "Additional Costs (trial period free): $BABEL_API_flag" | tee -a "$LOGFILE"
+    echo "Additional Costs (trial period free): $ANALYTICS_API_flag" | tee -a "$LOGFILE"
     echo "Download Data: $DOWNLOADDATA_flag" | tee -a "$LOGFILE"
     echo -e "*************\n" | tee -a "$LOGFILE" ;;
   *)
@@ -84,7 +84,7 @@ case $MODE_flag in
       R|r)    echo "Debug: Release" ;;
       *)      echo "Debug: $DEBUG_flag" ;;
     esac
-    echo "Additional Costs (trial period free): $BABEL_API_flag"
+    echo "Additional Costs (trial period free): $ANALYTICS_API_flag"
     echo "Download Data: $DOWNLOADDATA_flag"
     echo -e "*************\n"
     echo "${red}Please review your choices and make sure you make a valid selection. Terminating${reset}"
@@ -128,11 +128,11 @@ mkdir -p $JRPC/log/$MODE_flag/IoTeX
 echo "${green}Creating $JRPC/temp/$MODE_flag/IoTeX directory${reset}"
 mkdir -p $JRPC/temp/$MODE_flag/IoTeX
 
-case $BABEL_API_flag in
+case $ANALYTICS_API_flag in
   minimal)
     echo "${green}Building IoTeX node in minimal cost mode${reset}" ;;
-  babel-api)
-    echo "${green}Building IoTeX node with additional $BABEL_API_flag. Additiona charges may apply. This feature is still in testing phase, and is therefore free.${reset}" ;;
+  analytics)
+    echo "${green}Building IoTeX node with additional $ANALYTICS_API_flag. Additiona charges may apply. This feature is still in testing phase, and is therefore free.${reset}" ;;
   *)
     echo "${red}Not a valid Additional Costs mode. Please make a valid selection and try again. Terminating${reset}" 
     exit 0 ;;
@@ -177,8 +177,8 @@ case $MODE_flag in
   Testnet|Mainnet)
     echo "${green}Building the $MODE_flag IoTeX server node${reset}"
     echo "${green}Starting docker-compose scripts${reset}"
-    echo "running command ${purple} docker-compose -p jrpc-"${MODE_flag,}" -f $JRPC/etc/$MODE_flag/Docker/docker-compose-$MODE_flag-$BABEL_API_flag.yaml up $DEBUG_flag --no-deps --build${reset}"
-    docker-compose -p jrpc-"${MODE_flag,}" -f $JRPC/etc/$MODE_flag/Docker/docker-compose-$MODE_flag-$BABEL_API_flag.yaml up $DEBUG_flag --no-deps --build ;; 
+    echo "running command ${purple} docker-compose -p jrpc-"${MODE_flag,}" -f $JRPC/etc/$MODE_flag/Docker/docker-compose-$MODE_flag-$ANALYTICS_API_flag.yaml up $DEBUG_flag --no-deps --build${reset}"
+    docker-compose -p jrpc-"${MODE_flag,}" -f $JRPC/etc/$MODE_flag/Docker/docker-compose-$MODE_flag-$ANALYTICS_API_flag.yaml up $DEBUG_flag --no-deps --build ;; 
   *)
     echo "${red}Not a valid mode. Please enter in M for Mainnet or T for Testnet${reset}" ;; 
 esac

@@ -20,33 +20,6 @@ services:
       - "$JRPC/etc/IoTeX_Mainnet_Etc/genesis.yaml:/etc/iotex/genesis.yaml"
     command: iotex-server -config-path=/etc/iotex/config_override.yaml -genesis-path=/etc/iotex/genesis.yaml -plugin=gateway
 
-  redis:
-    container_name: redis
-    image: "redis:6.2.4-alpine3.14"
-    restart: on-failure
-    command: redis-server --appendonly yes
-    ports:
-      - 6379:6379
-    volumes:
-      - "$JRPC/data/IoTeX_Mainnet_Data/redis_data:/data/"
-    
-  babel:
-    container_name: babel-api
-    build: 
-        context: ./external/babel-api
-        dockerfile: Dockerfile
-    depends_on:
-      - iotex
-      - redis
-    ports:
-      - 8545:8545
-    environment:
-      - PORT=8545
-      - CHAIN_ID=4689
-      - END_POINT=http://iotex:14014
-      - REDIS_HOST=redis
-    command: npm start
-
   mysql:
     container_name: mysql
     image: mysql
