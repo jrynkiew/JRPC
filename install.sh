@@ -171,8 +171,7 @@ case $DOWNLOADDATA_flag in
     exit 0 ;;
 esac
 
-# Start the build scripts for the iotex-core, babel-api and redis servers 
-
+# Start the build scripts for the iotex-core
 case $MODE_flag in
   Testnet|Mainnet)
     echo "${green}Building the $MODE_flag IoTeX server node${reset}"
