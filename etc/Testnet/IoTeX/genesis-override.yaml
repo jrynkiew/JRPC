@@ -11,10 +11,11 @@ blockchain:
   blockInterval: 10s
   cookHeight: 1801
   dardanellesHeight: 100081
+  dardanellesNumSubEpochs: 30
   daytonaBlockHeight: 1713601
   easterHeight: 2696401
-  fbkMigrationHeight: 3250081
   fairbankHeight: 3252241
+  fbkMigrationHeight: 3250081
   greenlandHeight: 4794481
   hawaiiHeight: 8613361
   icelandHeight: 9291601
@@ -24,6 +25,7 @@ blockchain:
   midwayHeight: 13020481
   newfoundlandHeight: 14268961
   okhotskHeight: 17666641
+  palauHeight: 19165681
   numCandidateDelegates: 36
   numDelegates: 24
   numSubEpochs: 15
@@ -37,6 +39,7 @@ poll:
   gravityChainStartHeight: 8740900
   gravityChainCeilingHeight: 10022000
   nativeStakingContractAddress: io1w97pslyg7qdayp8mfnffxkjkpapaf83wmmll2l
+  pollMode: nativeMix
   registerContractAddress: 0x92adef0e5e0c2b4f64a1ac79823f7ad3bc1662c4
   scoreThreshold: "2000000000000000000000000"
   selfStakingThreshold: "1200000000000000000000000"
@@ -47,6 +50,7 @@ staking:
 rewarding:
   aleutianEpochReward: "15000000000000000000000"
   blockReward: "16000000000000000000"
+  dardanellesBlockReward: "8000000000000000000"
   epochReward: "12500000000000000000000"
   exemptAddrsFromEpochReward:
   - io1rm223d7jyflpg0cvkja4zmgnjz8hrrdgm09pu0
