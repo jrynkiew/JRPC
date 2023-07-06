@@ -1,4 +1,17 @@
-#!/bin/bash
+#!/bin/bash -l
+#$ -S /bin/bash
+#$ -N $1
+
+case $1 in
+  Mainnet|Testnet)
+    echo "Starting $1 IoTeX Full Node Build System"
+    MODE_flag=$1 ;;
+  *)
+    echo "Error. Wrong Selection"
+    exit 0 ;;
+esac
+
+echo "Starting install.sh"
 
 # Install dependencies
 #sudo apt-get install docker
@@ -29,35 +42,35 @@ echo "JRPC IoTeX Full Node Build System
 "
 . ./tools/setenv.sh $latestversion
 
+# # Start of script - getting necessary user input
+# read -p "Do you want to install Testnet (${red}T${reset}) or Mainnet (${green}M${reset})?: " MODE
+# MODE_flag=$(case "$MODE" in
+#   (T|t)    echo "Testnet"  ;;
+#   (M|m)    echo "Mainnet"  ;;
+#   ( * )    echo "Error. Wrong Selection"  ;;
+# esac)
+ANALYTICS_API_flag="minimal"
 # Start of script - getting necessary user input
-read -p "Do you want to install Testnet (${red}T${reset}) or Mainnet (${green}M${reset})?: " MODE
-MODE_flag=$(case "$MODE" in
-  (T|t)    echo "Testnet"  ;;
-  (M|m)    echo "Mainnet"  ;;
-  ( * )    echo "Error. Wrong Selection"  ;;
-esac)
-
-# Start of script - getting necessary user input
-read -p "Do you want to install the extra analytics add-on? No (${red}N${reset}) or Yes (${green}Y${reset})?: " ANALYTICS_API
-ANALYTICS_API_flag=$(case "$ANALYTICS_API" in
-  (Y|y)    echo "analytics"  ;;
-  (N|n)    echo "minimal"    ;;
-  ( * )    echo "Error. Wrong Selection"  ;;
-esac)
-
-read -p "Do you want to set up the node in Debug (${red}D${reset}) or Release (${green}R${reset}) mode?: " DEBUG
-DEBUG_flag=$(case "$DEBUG" in
-  (D|d)    echo ""    ;;
-  (R|r)    echo "-d"  ;;
-  ( * )    echo "Error. Wrong Selection"  ;;
-esac)
-
-read -p "Do you want to Download the latest data? No (${red}N${reset}) or Yes (${green}Y${reset}): " DOWNLOADDATA
-DOWNLOADDATA_flag=$(case "$DOWNLOADDATA" in
-  (Y|y)    echo "true"    ;;
-  (N|n)    echo "false"   ;;
-  ( * )    echo "Error. Wrong Selection"  ;;
-esac)
+# read -p "Do you want to install the extra analytics add-on? No (${red}N${reset}) or Yes (${green}Y${reset})?: " ANALYTICS_API
+# ANALYTICS_API_flag=$(case "$ANALYTICS_API" in
+#   (Y|y)    echo "analytics"  ;;
+#   (N|n)    echo "minimal"    ;;
+#   ( * )    echo "Error. Wrong Selection"  ;;
+# esac)
+DEBUG_flag=""
+# read -p "Do you want to set up the node in Debug (${red}D${reset}) or Release (${green}R${reset}) mode?: " DEBUG
+# DEBUG_flag=$(case "$DEBUG" in
+#   (D|d)    echo ""    ;;
+#   (R|r)    echo "-d"  ;;
+#   ( * )    echo "Error. Wrong Selection"  ;;
+# esac)
+DOWNLOADDATA_flag="true"
+# read -p "Do you want to Download the latest data? No (${red}N${reset}) or Yes (${green}Y${reset}): " DOWNLOADDATA
+# DOWNLOADDATA_flag=$(case "$DOWNLOADDATA" in
+#   (Y|y)    echo "true"    ;;
+#   (N|n)    echo "false"   ;;
+#   ( * )    echo "Error. Wrong Selection"  ;;
+# esac)
 
 case $MODE_flag in  
   Mainnet|Testnet)
@@ -105,18 +118,18 @@ case $DOWNLOADDATA_flag in
     echo "${red}Not a valid Data Download answer. Terminating${reset}"
     exit 0 ;;
 esac
-
-read -p "${green}Do you wish to proceed with the installation?${reset} No (${red}N${reset}) or Yes (${green}Y${reset}): " CONTINUE
-case $CONTINUE in
-  y|Y)
-    echo "We will now install the $MODE_flag IoTeX server node $latestversion" ;;
-  n|N)
-    echo "${red}Terminating install${reset}"
-    exit 0 ;;
-  *)
-    echo "${red}Not a valid answer. Terminating${reset}"
-    exit 0 ;;
-esac
+echo "We will now install the $MODE_flag IoTeX server node $latestversion"
+# read -p "${green}Do you wish to proceed with the installation?${reset} No (${red}N${reset}) or Yes (${green}Y${reset}): " CONTINUE
+# case $CONTINUE in
+#   y|Y)
+#     echo "We will now install the $MODE_flag IoTeX server node $latestversion" ;;
+#   n|N)
+#     echo "${red}Terminating install${reset}"
+#     exit 0 ;;
+#   *)
+#     echo "${red}Not a valid answer. Terminating${reset}"
+#     exit 0 ;;
+# esac
 
 # Setting up file and folder structure, and extract the downloaded data into it
 echo "${green}Creating $JRPC/data/$MODE_flag/IoTeX directory${reset}"
