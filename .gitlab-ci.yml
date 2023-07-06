@@ -4,6 +4,6 @@ stages:
 run-build:
   stage: build
   script:
-    - ./install.sh
+    - ./install.sh Testnet
   tags:
     - docker
