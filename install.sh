@@ -56,14 +56,14 @@ ANALYTICS_API_flag="minimal"
 #   (N|n)    echo "minimal"    ;;
 #   ( * )    echo "Error. Wrong Selection"  ;;
 # esac)
-DEBUG_flag=""
+DEBUG_flag="-d"
 # read -p "Do you want to set up the node in Debug (${red}D${reset}) or Release (${green}R${reset}) mode?: " DEBUG
 # DEBUG_flag=$(case "$DEBUG" in
 #   (D|d)    echo ""    ;;
 #   (R|r)    echo "-d"  ;;
 #   ( * )    echo "Error. Wrong Selection"  ;;
 # esac)
-DOWNLOADDATA_flag="false"
+DOWNLOADDATA_flag="true"
 # read -p "Do you want to Download the latest data? No (${red}N${reset}) or Yes (${green}Y${reset}): " DOWNLOADDATA
 # DOWNLOADDATA_flag=$(case "$DOWNLOADDATA" in
 #   (Y|y)    echo "true"    ;;
