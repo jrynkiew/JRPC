@@ -56,7 +56,7 @@ ANALYTICS_API_flag="minimal"
 #   (N|n)    echo "minimal"    ;;
 #   ( * )    echo "Error. Wrong Selection"  ;;
 # esac)
-DEBUG_flag="-d"
+DEBUG_flag=""
 # read -p "Do you want to set up the node in Debug (${red}D${reset}) or Release (${green}R${reset}) mode?: " DEBUG
 # DEBUG_flag=$(case "$DEBUG" in
 #   (D|d)    echo ""    ;;
