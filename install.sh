@@ -63,7 +63,7 @@ DEBUG_flag="-d"
 #   (R|r)    echo "-d"  ;;
 #   ( * )    echo "Error. Wrong Selection"  ;;
 # esac)
-DOWNLOADDATA_flag="true"
+DOWNLOADDATA_flag="false"
 # read -p "Do you want to Download the latest data? No (${red}N${reset}) or Yes (${green}Y${reset}): " DOWNLOADDATA
 # DOWNLOADDATA_flag=$(case "$DOWNLOADDATA" in
 #   (Y|y)    echo "true"    ;;
