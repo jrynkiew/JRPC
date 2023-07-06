@@ -23,15 +23,14 @@ echo "Starting install.sh"
 git submodule update --init --recursive
 git submodule update --remote --merge
 
-# Environment variables
-red=`tput setaf 1`
-purple=`tput setaf 93`
-blue=`tput setaf 21`
-green=`tput setaf 2`
-yellow=`tput setaf 214`
-reset=`tput sgr0`
+# # Environment variables
+# red=`tput setaf 1`
+# purple=`tput setaf 93`
+# blue=`tput setaf 21`
+# green=`tput setaf 2`
+# yellow=`tput setaf 214`
+# reset=`tput sgr0`
 
-MODE_flag=``
 ANALYTICS_API_flag=``
 DEBUG_flag=``
 DOWNLOADDATA_flag=``
