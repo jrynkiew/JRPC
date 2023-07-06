@@ -1,0 +1,7 @@
+stages:
+  - build
+
+run-build:
+  stage: build
+  script:
+    - ./install.sh
