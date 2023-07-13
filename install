@@ -41,10 +41,10 @@ export JRPC_version=$latestversion
 case $2 in
   D|d|Debug|debug)
     echo "Debug mode selected"
-    DEBUG_flag="-d" ;;
+    DEBUG_flag="" ;;
   R|r|Release|release)
     echo "Release mode selected"
-    DEBUG_flag="" ;;
+    DEBUG_flag="-d" ;;
   *)
     echo "No mode selected, defaulting to Release"
     DEBUG_flag="" ;;
@@ -102,7 +102,7 @@ case $DOWNLOADDATA_flag in
   true)
     echo "This will download ${blue}$(curl -sIL https://t.iotex.me/$MODE_flag-data-with-idx-latest | grep -i x-goog-stored-content-length | awk '{print $2/1024/1024/1024 " GB"}')${reset} from https://t.iotex.me/$MODE_flag-data-with-idx-latest" ;;
   false)
-    echo "This script will attempt to use data located in ${green}/data/$MODE_flag/IoTeX${reset}"
+    echo "This script will attempt to use data located in ${green}$JRPC/data/$MODE_flag/IoTeX${reset}"
     echo "If there is no data in this directory, the blockchain will attempt to synchronize from block height 0. You will need to provide your Infura, Pocket or ANKR endpoint in the configuration files" ;;
   *)
     echo "${red}Not a valid Data Download answer. Terminating${reset}"
@@ -110,6 +110,16 @@ case $DOWNLOADDATA_flag in
 esac
 
 echo "We will now install the $MODE_flag IoTeX server node $latestversion"
+
+# Setting up file and folder structure, and extract the downloaded data into it
+echo "${green}Creating $JRPC/data/$MODE_flag/IoTeX directory${reset}"
+mkdir -p $JRPC/data/$MODE_flag/IoTeX
+
+echo "${green}Creating $JRPC/log/$MODE_flag/IoTeX directory${reset}"
+mkdir -p $JRPC/log/$MODE_flag/IoTeX
+
+echo "${green}Creating $JRPC/temp/$MODE_flag/IoTeX directory${reset}"
+mkdir -p $JRPC/temp/$MODE_flag/IoTeX
 
 case $COST_flag in
   minimal)
@@ -125,23 +135,23 @@ case $MODE_flag in
   Mainnet)
     # If in future releases IoTeX requires a data patch, uncomment this script to attempt to download the latest patch and install it.
     echo "${green}Downloading latest patch${reset}"
-    curl https://raw.githubusercontent.com/iotexproject/iotex-bootstrap/v1.8.2/trie.db.patch > /data/$MODE_flag/IoTeX/trie.db.patch ;;
+    curl https://raw.githubusercontent.com/iotexproject/iotex-bootstrap/v1.8.2/trie.db.patch > $JRPC/data/$MODE_flag/IoTeX/trie.db.patch ;;
 esac
 
 case $DOWNLOADDATA_flag in
   true)
     echo "${green}Downloading latest data${reset}"
-    curl -L -o /temp/$MODE_flag/IoTeX/data.tar.gz https://t.iotex.me/$MODE_flag-data-with-idx-latest 
+    curl -L -o $JRPC/temp/$MODE_flag/IoTeX/data.tar.gz https://t.iotex.me/$MODE_flag-data-with-idx-latest 
 
     echo "${green}Extracting data to temporary directory${reset}"
-    tar xvf /temp/$MODE_flag/IoTeX/data.tar.gz -C /temp/$MODE_flag/IoTeX/
+    tar xvf $JRPC/temp/$MODE_flag/IoTeX/data.tar.gz -C $JRPC/temp/$MODE_flag/IoTeX/
 
     echo "${green}Moving data files to the destination directory and cleaning up the $JRPC/temp directory${reset}"
-    mv /temp/$MODE_flag/IoTeX/data/* /data/$MODE_flag/IoTeX
-    rm -r /temp/$MODE_flag/IoTeX/data/ ;;
+    mv $JRPC/temp/$MODE_flag/IoTeX/data/* $JRPC/data/$MODE_flag/IoTeX
+    rm -r $JRPC/temp/$MODE_flag/IoTeX/data/ ;;
 
   false)
-    echo "This script will attempt to use data located in ${green}/data/$MODE_flag/IoTeX${reset}"
+    echo "This script will attempt to use data located in ${green}$JRPC/data/$MODE_flag/IoTeX${reset}"
     echo "If there is no data in this directory, the blockchain will attempt to synchronize from block height 0. You will need to provide your Infura, Pocket or ANKR endpoint in the configuration files" ;;
     
     # If the node does not start synching from block height 0, it might be due to incorrect Pocket Ethereum Mainnet Tracing endpoint."
