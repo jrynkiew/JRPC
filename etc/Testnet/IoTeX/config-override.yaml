@@ -1,6 +1,6 @@
 network:
   # externalHost: SET YOUR EXTERNAL IP HERE (e.g., 12.34.56.78)
-  externalPort: 4690
+  externalPort: 4689
   bootstrapNodes:
     - /dns4/bootnode-0.testnet.iotex.one/tcp/4689/ipfs/12D3KooWFnaTYuLo8Mkbm3wzaWHtUuaxBRe24Uiopu15Wr5EhD3o
     - /dns4/bootnode-1.testnet.iotex.one/tcp/4689/ipfs/12D3KooWS7hkdFozeUqriUxv7zw8Y6NCeV8E5HUbgmVkGJUv4jHS
@@ -22,7 +22,8 @@ chain:
   committee:
     gravityChainAPIs:
       # please change the infura key to your key (e.g., https://mainnet.infura.io/v3/YOUR_KEY)
-      - https://mainnet.infura.io/v3/b355cae6fafc4302b106b937ee6c15af
+      - https://eth-trace.gateway.pokt.network/v1/lb/622f8eedb2feb2003981695f
+      - https://eth-archival.gateway.pokt.network/v1/lb/622f8eedb2feb2003981695f
     numOfRetries: 20
     paginationSize: 255
     cacheSize: 1000

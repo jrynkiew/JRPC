@@ -2,74 +2,65 @@
 #$ -S /bin/bash
 #$ -N $1
 
+# Environment variables
+red=`tput setaf 1`
+purple=`tput setaf 93`
+blue=`tput setaf 21`
+green=`tput setaf 2`
+yellow=`tput setaf 214`
+reset=`tput sgr0`
+
 case $1 in
-  Mainnet|Testnet)
-    echo "Starting $1 IoTeX Full Node Build System"
-    MODE_flag=$1 ;;
+  Testnet|t|testnet|T)
+    echo "Starting Testnet IoTeX Full Node Build System"
+    MODE_flag="Testnet" ;;
+  Mainnet|m|mainnet|M)
+    echo "Starting Mainnet IoTeX Full Node Build System"
+    MODE_flag="Mainnet" ;;
   *)
-    echo "Error. Wrong Selection"
+    echo "${red}Use <./install m> for Mainnet or <./install t> for Testnet ${reset}"
     exit 0 ;;
 esac
 
-echo "Starting install.sh"
+echo "|---------------------------------------------|"
+echo "|                                             |"
+echo "|    starting IoTeX Full Node Build System    |"
+echo "|                                             |"
+echo "|---------------------------------------------|"
 
-# Install dependencies
-#sudo apt-get install docker
-#sudo apt-get install docker-compose
-#sudo groupadd docker
-#sudo usermod -aG docker $USER
-#newgrp docker 
-#sudo systemctl restart docker
-git submodule update --init --recursive
-git submodule update --remote --merge
-
-# # Environment variables
-# red=`tput setaf 1`
-# purple=`tput setaf 93`
-# blue=`tput setaf 21`
-# green=`tput setaf 2`
-# yellow=`tput setaf 214`
-# reset=`tput sgr0`
-
-ANALYTICS_API_flag=``
+# Environment variables
 DEBUG_flag=``
 DOWNLOADDATA_flag=``
+COST_flag="minimal"
 
 latestversion=$(curl --silent "https://api.github.com/repos/iotexproject/iotex-core/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")')
 
-echo "JRPC IoTeX Full Node Build System
-"
-. ./tools/setenv.sh $latestversion
+export JRPC=$PWD
+export JRPC_version=$latestversion
 
-# # Start of script - getting necessary user input
-# read -p "Do you want to install Testnet (${red}T${reset}) or Mainnet (${green}M${reset})?: " MODE
-# MODE_flag=$(case "$MODE" in
-#   (T|t)    echo "Testnet"  ;;
-#   (M|m)    echo "Mainnet"  ;;
-#   ( * )    echo "Error. Wrong Selection"  ;;
-# esac)
-ANALYTICS_API_flag="minimal"
-# Start of script - getting necessary user input
-# read -p "Do you want to install the extra analytics add-on? No (${red}N${reset}) or Yes (${green}Y${reset})?: " ANALYTICS_API
-# ANALYTICS_API_flag=$(case "$ANALYTICS_API" in
-#   (Y|y)    echo "analytics"  ;;
-#   (N|n)    echo "minimal"    ;;
-#   ( * )    echo "Error. Wrong Selection"  ;;
-# esac)
-DEBUG_flag=""
-# read -p "Do you want to set up the node in Debug (${red}D${reset}) or Release (${green}R${reset}) mode?: " DEBUG
-# DEBUG_flag=$(case "$DEBUG" in
-#   (D|d)    echo ""    ;;
-#   (R|r)    echo "-d"  ;;
-#   ( * )    echo "Error. Wrong Selection"  ;;
-# esac)
-DOWNLOADDATA_flag="false"
-# read -p "Do you want to Download the latest data? No (${red}N${reset}) or Yes (${green}Y${reset}): " DOWNLOADDATA
-# DOWNLOADDATA_flag=$(case "$DOWNLOADDATA" in
-#   (Y|y)    echo "true"    ;;
-#   (N|n)    echo "false"   ;;
-#   ( * )    echo "Error. Wrong Selection"  ;;
-# esac)
+case $2 in
+  D|d|Debug|debug)
+    echo "Debug mode selected"
+    DEBUG_flag="-d" ;;
+  R|r|Release|release)
+    echo "Release mode selected"
+    DEBUG_flag="" ;;
+  *)
+    echo "No mode selected, defaulting to Release"
+    DEBUG_flag="" ;;
+esac
+
+case $3 in
+  Y|y|Yes|yes)
+    echo "Downloading latest data"
+    DOWNLOADDATA_flag="true" ;;
+  N|n|No|no)
+    echo "Not downloading latest data"
+    DOWNLOADDATA_flag="false" ;;
+  *)
+    echo "No selection made, defaulting to No"
+    DOWNLOADDATA_flag="false" ;;
+esac
 
 case $MODE_flag in  
   Mainnet|Testnet)
@@ -84,7 +75,7 @@ case $MODE_flag in
       R|r)    echo "Debug: Release" | tee -a "$LOGFILE" ;;
       *)      echo "Debug: $DEBUG_flag" ;;
     esac
-    echo "Additional Costs (trial period free): $ANALYTICS_API_flag" | tee -a "$LOGFILE"
+    echo "Additional Costs (trial period free): $COST_flag" | tee -a "$LOGFILE"
     echo "Download Data: $DOWNLOADDATA_flag" | tee -a "$LOGFILE"
     echo -e "*************\n" | tee -a "$LOGFILE" ;;
   *)
@@ -96,7 +87,7 @@ case $MODE_flag in
       R|r)    echo "Debug: Release" ;;
       *)      echo "Debug: $DEBUG_flag" ;;
     esac
-    echo "Additional Costs (trial period free): $ANALYTICS_API_flag"
+    echo "Additional Costs (trial period free): $COST_flag"
     echo "Download Data: $DOWNLOADDATA_flag"
     echo -e "*************\n"
     echo "${red}Please review your choices and make sure you make a valid selection. Terminating${reset}"
@@ -117,18 +108,8 @@ case $DOWNLOADDATA_flag in
     echo "${red}Not a valid Data Download answer. Terminating${reset}"
     exit 0 ;;
 esac
+
 echo "We will now install the $MODE_flag IoTeX server node $latestversion"
-# read -p "${green}Do you wish to proceed with the installation?${reset} No (${red}N${reset}) or Yes (${green}Y${reset}): " CONTINUE
-# case $CONTINUE in
-#   y|Y)
-#     echo "We will now install the $MODE_flag IoTeX server node $latestversion" ;;
-#   n|N)
-#     echo "${red}Terminating install${reset}"
-#     exit 0 ;;
-#   *)
-#     echo "${red}Not a valid answer. Terminating${reset}"
-#     exit 0 ;;
-# esac
 
 # Setting up file and folder structure, and extract the downloaded data into it
 echo "${green}Creating $JRPC/data/$MODE_flag/IoTeX directory${reset}"
@@ -140,11 +121,11 @@ mkdir -p $JRPC/log/$MODE_flag/IoTeX
 echo "${green}Creating $JRPC/temp/$MODE_flag/IoTeX directory${reset}"
 mkdir -p $JRPC/temp/$MODE_flag/IoTeX
 
-case $ANALYTICS_API_flag in
+case $COST_flag in
   minimal)
     echo "${green}Building IoTeX node in minimal cost mode${reset}" ;;
   analytics)
-    echo "${green}Building IoTeX node with additional $ANALYTICS_API_flag. Additiona charges may apply. This feature is still in testing phase, and is therefore free.${reset}" ;;
+    echo "${green}Building IoTeX node with additional $COST_flag. Additiona charges may apply. This feature is still in testing phase, and is therefore free.${reset}" ;;
   *)
     echo "${red}Not a valid Additional Costs mode. Please make a valid selection and try again. Terminating${reset}" 
     exit 0 ;;
@@ -171,18 +152,12 @@ case $DOWNLOADDATA_flag in
 
   false)
     echo "This script will attempt to use data located in ${green}$JRPC/data/$MODE_flag/IoTeX${reset}"
-    echo "If there is no data in this directory, the blockchain will attempt to synchronize from block height 0. You will need to provide your Infura, Pocket or ANKR endpoint in the configuration files"
+    echo "If there is no data in this directory, the blockchain will attempt to synchronize from block height 0. You will need to provide your Infura, Pocket or ANKR endpoint in the configuration files" ;;
     
     # If the node does not start synching from block height 0, it might be due to incorrect Pocket Ethereum Mainnet Tracing endpoint."
     # If you do not have any endpoints to use, you can uncomment the below line to download the static poll.db data files, which will overcome the need to connect to Mainnet Ethereum Tracing nodes.
     # echo "${green}Downloading latest poll.db file${reset}"
     # curl -L https://storage.googleapis.com/blockchain-golden/poll."${MODE_flag,}".tar.gz > $JRPC/temp/$MODE_flag/IoTeX/poll.tar.gz; tar -xzf $JRPC/temp/$MODE_flag/IoTeX/poll.tar.gz -C $JRPC/data/$MODE_flag/IoTeX/ ;;
-    echo "${green}Extracting data to temporary directory${reset}"
-    tar xvf /data/Testnet/data.tar.gz -C $JRPC/temp/$MODE_flag/IoTeX/
-
-    echo "${green}Moving data files to the destination directory and cleaning up the $JRPC/temp directory${reset}"
-    mv $JRPC/temp/$MODE_flag/IoTeX/data/* $JRPC/data/$MODE_flag/IoTeX
-    rm -r $JRPC/temp/$MODE_flag/IoTeX/data/ ;;
   *)
     echo "${red}Not a valid answer. Terminating${reset}"
     exit 0 ;;
@@ -193,8 +168,8 @@ case $MODE_flag in
   Testnet|Mainnet)
     echo "${green}Building the $MODE_flag IoTeX server node${reset}"
     echo "${green}Starting docker-compose scripts${reset}"
-    echo "running command ${purple} docker-compose -p jrpc-"${MODE_flag,}" -f $JRPC/etc/$MODE_flag/Docker/docker-compose-$MODE_flag-$ANALYTICS_API_flag.yaml up $DEBUG_flag --no-deps --build${reset}"
-    docker-compose -p jrpc-"${MODE_flag,}" -f $JRPC/etc/$MODE_flag/Docker/docker-compose-$MODE_flag-$ANALYTICS_API_flag.yaml up $DEBUG_flag --no-deps --build ;; 
+    echo "running command ${purple} docker-compose -p jrpc-"${MODE_flag,}" -f $JRPC/etc/$MODE_flag/Docker/docker-compose.yaml up $DEBUG_flag --no-deps --build${reset}"
+    docker-compose -p jrpc-"${MODE_flag,}" -f $JRPC/etc/$MODE_flag/Docker/docker-compose.yaml up $DEBUG_flag --no-deps --build ;; 
   *)
     echo "${red}Not a valid mode. Please enter in M for Mainnet or T for Testnet${reset}" ;; 
 esac
