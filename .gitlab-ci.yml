@@ -1,9 +1,17 @@
 stages:
-  - build
+  - runTestnet
+  - runMainnet
 
-run-build:
-  stage: build
+run-Testnet:
+  stage: runTestnet
   script:
-    - ./install.sh Testnet
+    - ./install t r y
+  tags:
+    - docker
+
+run-Mainnet:
+  stage: runMainnet
+  script:
+    - ./install m r y
   tags:
     - docker
