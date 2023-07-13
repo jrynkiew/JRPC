@@ -6,7 +6,7 @@ run-Testnet:
   stage: runTestnet
   script:
     - chmod +x ./install
-    - ./install t r y
+    - ./install t r n
   tags:
     - docker
 
