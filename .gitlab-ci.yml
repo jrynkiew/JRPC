@@ -5,6 +5,7 @@ stages:
 run-Testnet:
   stage: runTestnet
   script:
+    - chmod +x ./install
     - ./install t r y
   tags:
     - docker
@@ -12,6 +13,7 @@ run-Testnet:
 run-Mainnet:
   stage: runMainnet
   script:
+    - chmod +x ./install
     - ./install m r y
   tags:
     - docker
